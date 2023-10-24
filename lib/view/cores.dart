@@ -23,8 +23,8 @@ class _CoresState extends State<Cores> {
       children: <Widget>[
         InkWell(
             onTap: () {
-                    player.play(AssetSource('audios/cores/vermelha.mp3'));
-                  },
+              player.play(AssetSource('audios/cores/vermelha.mp3'));
+            },
             child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,
@@ -43,10 +43,10 @@ class _CoresState extends State<Cores> {
                 ),
               ),
             )),
-      InkWell(
+        InkWell(
             onTap: () {
-                    player.play(AssetSource('audios/cores/azul.mp3'));
-                  },
+              player.play(AssetSource('audios/cores/azul.mp3'));
+            },
             child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,
@@ -65,10 +65,10 @@ class _CoresState extends State<Cores> {
                 ),
               ),
             )),
-            InkWell(
+        InkWell(
             onTap: () {
-                    player.play(AssetSource('audios/cores/amarela.mp3'));
-                  },
+              player.play(AssetSource('audios/cores/amarela.mp3'));
+            },
             child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,
@@ -87,10 +87,10 @@ class _CoresState extends State<Cores> {
                 ),
               ),
             )),
-            InkWell(
+        InkWell(
             onTap: () {
-                    player.play(AssetSource('audios/cores/verde.mp3'));
-                  },
+              player.play(AssetSource('audios/cores/verde.mp3'));
+            },
             child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,
@@ -109,10 +109,10 @@ class _CoresState extends State<Cores> {
                 ),
               ),
             )),
-            InkWell(
+        InkWell(
             onTap: () {
-                    player.play(AssetSource('audios/cores/rosa.mp3'));
-                  },
+              player.play(AssetSource('audios/cores/rosa.mp3'));
+            },
             child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,
@@ -131,10 +131,10 @@ class _CoresState extends State<Cores> {
                 ),
               ),
             )),
-            InkWell(
+        InkWell(
             onTap: () {
-                    player.play(AssetSource('audios/cores/cinzenta.mp3'));
-                  },
+              player.play(AssetSource('audios/cores/cinzenta.mp3'));
+            },
             child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,
@@ -153,10 +153,10 @@ class _CoresState extends State<Cores> {
                 ),
               ),
             )),
-            InkWell(
+        InkWell(
             onTap: () {
-                    player.play(AssetSource('audios/cores/laranja.mp3'));
-                  },
+              player.play(AssetSource('audios/cores/laranja.mp3'));
+            },
             child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,
@@ -175,10 +175,10 @@ class _CoresState extends State<Cores> {
                 ),
               ),
             )),
-            InkWell(
+        InkWell(
             onTap: () {
-                    player.play(AssetSource('audios/cores/castanha.mp3'));
-                  },
+              player.play(AssetSource('audios/cores/castanha.mp3'));
+            },
             child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,
@@ -197,10 +197,10 @@ class _CoresState extends State<Cores> {
                 ),
               ),
             )),
-            InkWell(
+        InkWell(
             onTap: () {
-                    player.play(AssetSource('audios/cores/preta.mp3'));
-                  },
+              player.play(AssetSource('audios/cores/preta.mp3'));
+            },
             child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,
@@ -219,10 +219,10 @@ class _CoresState extends State<Cores> {
                 ),
               ),
             )),
-            InkWell(
+        InkWell(
             onTap: () {
-                    player.play(AssetSource('audios/cores/lilas.mp3'));
-                  },
+              player.play(AssetSource('audios/cores/lilas.mp3'));
+            },
             child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,
@@ -241,10 +241,10 @@ class _CoresState extends State<Cores> {
                 ),
               ),
             )),
-            InkWell(
+        InkWell(
             onTap: () {
-                    player.play(AssetSource('audios/cores/branca.mp3'));
-                  },
+              player.play(AssetSource('audios/cores/branca.mp3'));
+            },
             child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,

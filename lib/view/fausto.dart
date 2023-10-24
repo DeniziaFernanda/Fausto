@@ -1,4 +1,4 @@
-import 'package:fausto/home.dart';
+import 'package:fausto/view/home.dart';
 import 'package:flutter/material.dart';
 
 class Fausto extends StatefulWidget {

@@ -485,7 +485,6 @@ class _AnimaisState extends State<Animais> {
                 ],
               )),
         ),
-        //LM
         InkWell(
           onTap: () {
                     player.play(AssetSource('audios/animais/ovelha.mp3'));

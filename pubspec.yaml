@@ -30,12 +30,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   audioplayers: ^4.1.0
+  bloc: ^8.1.2
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +79,7 @@ flutter:
     - assets/audios/frutas/
     - assets/audios/dias_da_semana/
     - assets/audios/cores/
+    - assets/audios/respostas/
 
   #   - images/a_dot_ham.jpeg
 

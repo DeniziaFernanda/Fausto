@@ -1,12 +1,12 @@
-import 'package:fausto/alfabeto.dart';
-import 'package:fausto/animais.dart';
-import 'package:fausto/cores.dart';
-import 'package:fausto/desenho.dart';
-import 'package:fausto/dias_da_semana.dart';
-import 'package:fausto/frutas.dart';
-import 'package:fausto/jogo_quiz.dart';
-import 'package:fausto/leitura.dart';
-import 'package:fausto/numeros.dart';
+import 'package:fausto/view/alfabeto.dart';
+import 'package:fausto/view/animais.dart';
+import 'package:fausto/view/cores.dart';
+import 'package:fausto/view/desenho.dart';
+import 'package:fausto/view/dias_da_semana.dart';
+import 'package:fausto/view/frutas.dart';
+import 'package:fausto/view/jogo_quiz.dart';
+import 'package:fausto/view/leitura.dart';
+import 'package:fausto/view/numeros.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
