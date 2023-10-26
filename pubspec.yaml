@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   audioplayers: ^4.1.0
   bloc: ^8.1.2
+  flutter_tts: ^3.8.3
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +81,7 @@ flutter:
     - assets/audios/dias_da_semana/
     - assets/audios/cores/
     - assets/audios/respostas/
+    - assets/Imagens/fundos/
 
   #   - images/a_dot_ham.jpeg
 

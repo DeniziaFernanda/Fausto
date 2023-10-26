@@ -139,7 +139,6 @@ class _DesenhoState extends State<Desenho> {
         ],
       ),
       floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
             heroTag: "Undo",

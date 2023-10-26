@@ -1233,7 +1233,7 @@ class JogoQuizService {
   Future<JogoQuizModel> findOne() async{
     int tamanho = jogoQuiz.length;
     int valor = Random().nextInt(tamanho);
-    return Future.delayed(const Duration(microseconds: 1200), () => jogoQuiz[valor]);
+    return Future.delayed(const Duration(microseconds: 6200), () => jogoQuiz[valor]);
   }
 
   Future<List<JogoQuizModel>> findAll() async {
