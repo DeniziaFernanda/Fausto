@@ -1,6 +1,6 @@
 # fausto
 
-Jogo infantil para aprender coisas como: alfabeto, número, frutas, animais, cores, desenhar, jogo quiz, e leitura
+Jogo infantil para aprender coisas como: alfabeto, número, frutas, animais, dias da semana, cores, desenhar, jogo quiz, e leitura
 
 ## Getting Started
 
