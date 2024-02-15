@@ -15,34 +15,19 @@ const MaterialColor corPrincipal = MaterialColor(
     900: Color(0xFFD9E76C),
   },
 );
-const MaterialColor vermelho = MaterialColor(
-  0xFFFF0000,
+const MaterialColor corSegundaria = MaterialColor(
+  0xFF9CC753,
   <int, Color>{
-    50: Color(0xFFFF0000),
-    100: Color(0xFFFF0000),
-    200: Color(0xFFFF0000),
-    300: Color(0xFFFF0000),
-    400: Color(0xFFFF0000),
-    500: Color(0xFFFF0000),
-    600: Color(0xFFFF0000),
-    700: Color(0xFFFF0000),
-    800: Color(0xFFFF0000),
-    900: Color(0xFFFF0000),
-  },
-);
-const MaterialColor verde = MaterialColor(
-  0xFF00FF00,
-  <int, Color>{
-    50: Color(0xFF00FF00),
-    100: Color(0xFF00FF00),
-    200: Color(0xFF00FF00),
-    300: Color(0xFF00FF00),
-    400: Color(0xFF00FF00),
-    500: Color(0xFF00FF00),
-    600: Color(0xFF00FF00),
-    700: Color(0xFF00FF00),
-    800: Color(0xFF00FF00),
-    900: Color(0xFF00FF00),
+    50: Color(0xFF9CC753),
+    100: Color(0xFF9CC753),
+    200: Color(0xFF9CC753),
+    300: Color(0xFF9CC753),
+    400: Color(0xFF9CC753),
+    500: Color(0xFF9CC753),
+    600: Color(0xFF9CC753),
+    700: Color(0xFF9CC753),
+    800: Color(0xFF9CC753),
+    900: Color(0xFF9CC753),
   },
 );
 
