@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AlfabetoModel {
   final int id;
   final String imagem;
@@ -19,6 +21,20 @@ class AnimalModel {
   const AnimalModel({
     required this.id,
     required this.imagem,
+    required this.audio,
+    required this.nome,
+  });
+}
+
+class CoreModel {
+  final int id;
+  final Color cor;
+  final String audio;
+  final String nome;
+
+  const CoreModel({
+    required this.id,
+    required this.cor,
     required this.audio,
     required this.nome,
   });

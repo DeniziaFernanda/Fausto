@@ -1,4 +1,5 @@
 import 'package:fausto/model/jogo_model.dart';
+import 'package:flutter/material.dart';
 
 class JogoService {
   static Future<List<AlfabetoModel>> getAllAlfabeto() async {
@@ -281,5 +282,81 @@ class JogoService {
       ),
     ]);
     return animais;
+  }
+
+
+   static Future<List<CoreModel>> getAllCores() async {
+    List<CoreModel> cores = [];
+
+    cores.addAll([
+      const CoreModel(
+        id: 1,
+        cor: Colors.red,
+        audio: 'audios/cores/vermelha.mp3',
+        nome: 'Vermelha',
+      ),
+      const CoreModel(
+        id: 2,
+        cor: Colors.blue,
+        audio: 'audios/cores/azul.mp3',
+        nome: 'Azul',
+      ),
+      const CoreModel(
+        id: 3,
+        cor: Colors.yellow,
+        audio: 'audios/cores/amarela.mp3',
+        nome: 'Amarela',
+      ),
+      const CoreModel(
+        id: 4,
+        cor: Colors.green,
+        audio: 'audios/cores/verde.mp3',
+        nome: 'Verde',
+      ),
+      const CoreModel(
+        id: 5,
+        cor: Colors.pink,
+        audio: 'audios/cores/rosa.mp3',
+        nome: 'Rosa',
+      ),
+      const CoreModel(
+        id: 6,
+        cor: Colors.grey,
+        audio: 'audios/cores/cinzenta.mp3',
+        nome: 'Cinzenta',
+      ),
+      const CoreModel(
+        id: 7,
+        cor: Colors.orange,
+        audio: 'audios/cores/laranja.mp3',
+        nome: 'Laranja',
+      ),
+      const CoreModel(
+        id: 8,
+        cor: Colors.brown,
+        audio: 'audios/cores/castanha.mp3',
+        nome: 'Castanha',
+      ),
+       const CoreModel(
+        id: 9,
+        cor: Colors.black,
+        audio: 'audios/cores/preta.mp3',
+        nome: 'Preta',
+      ),
+      const CoreModel(
+        id: 10,
+        cor: Colors.purple,
+        audio: 'audios/cores/lilas.mp3',
+        nome: 'Lilás',
+      ),
+     
+      const CoreModel(
+        id: 11,
+        cor: Colors.white,
+        audio: 'audios/cores/branca.mp3',
+        nome: 'Branca',
+      ),
+    ]);
+    return cores;
   }
 }

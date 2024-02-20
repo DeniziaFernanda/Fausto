@@ -10,9 +10,9 @@ class Alfabeto extends StatefulWidget {
 }
 
 class _AlfabetoState extends State<Alfabeto> {
-  Color cor = corPrincipal;
   final player = AudioPlayer();
-  late List<AlfabetoModel> alfabetoList;
+  late List<AlfabetoModel> alfabetoList = [];
+  int? elementoSelecionado;
 
   @override
   void initState() {
@@ -40,9 +40,13 @@ class _AlfabetoState extends State<Alfabeto> {
     }
   }
 
-  void changeColor() {
+  void changeColor(int id) {
     setState(() {
-      cor = corSegundaria;
+      if (elementoSelecionado == id) {
+        elementoSelecionado = null;
+      } else {
+        elementoSelecionado = id;
+      }
     });
   }
 
@@ -64,13 +68,15 @@ class _AlfabetoState extends State<Alfabeto> {
               InkWell(
                 onTap: () {
                   player.play(AssetSource(alfabeto.audio));
-                  changeColor();
+                  changeColor(alfabeto.id);
                 },
                 child: Container(
                   width: double.maxFinite / 2 - 100,
                   height: 150,
                   decoration: BoxDecoration(
-                    color: cor,
+                    color: elementoSelecionado == alfabeto.id
+                        ? corSegundaria
+                        : corPrincipal,
                     border: Border.all(width: 5, color: corSegundaria),
                     borderRadius: BorderRadius.circular(20),
                   ),

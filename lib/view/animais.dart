@@ -10,9 +10,11 @@ class Animais extends StatefulWidget {
 }
 
 class _AnimaisState extends State<Animais> {
-   Color cor = corPrincipal;
+  Color cor = corPrincipal;
   final player = AudioPlayer();
-  late List<AnimalModel> animalList;
+  late List<AnimalModel> animalList = [];
+  int? elementoSelecionado;
+
 
   @override
   void initState() {
@@ -40,9 +42,13 @@ class _AnimaisState extends State<Animais> {
     }
   }
 
-  void changeColor() {
+  void changeColor(int id) {
     setState(() {
-      cor = corSegundaria;
+      if (elementoSelecionado == id) {
+        elementoSelecionado = null;
+      } else {
+        elementoSelecionado = id;
+      }
     });
   }
 
@@ -64,13 +70,15 @@ class _AnimaisState extends State<Animais> {
         InkWell(
           onTap: () {
                     player.play(AssetSource(animais.audio));
-                    changeColor();
+                    changeColor(animais.id);
                   },
           child: Container(
               width: double.maxFinite / 2 - 100,
               height: 150,
               decoration: BoxDecoration(
-                color: cor,
+                color: elementoSelecionado == animais.id
+                        ? corSegundaria
+                        : corPrincipal,
                 border: Border.all(
                     width: 5, color: corSegundaria),
                 borderRadius: BorderRadius.circular(20),
