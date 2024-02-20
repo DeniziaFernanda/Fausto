@@ -39,3 +39,44 @@ class CoreModel {
     required this.nome,
   });
 }
+
+class SemanaModel {
+  final int id;
+  final String imagem;
+  final String audio;
+  final String nome;
+
+  const SemanaModel({
+    required this.id,
+    required this.imagem,
+    required this.audio,
+    required this.nome,
+  });
+}
+
+class NumeroModel {
+  final int id;
+  final String imagem;
+  final String audio;
+
+  const NumeroModel({
+    required this.id,
+    required this.imagem,
+    required this.audio,
+  });
+}
+
+
+class FrutaModel {
+  final int id;
+  final String imagem;
+  final String audio;
+  final String nome;
+
+  const FrutaModel({
+    required this.id,
+    required this.imagem,
+    required this.audio,
+    required this.nome,
+  });
+}

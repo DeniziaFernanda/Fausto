@@ -1,4 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:fausto/model/jogo_model.dart';
+import 'package:fausto/services/jogo_service.dart';
+import 'package:fausto/utils/cores.dart';
 import 'package:flutter/material.dart';
 
 class Numeros extends StatefulWidget {
@@ -7,10 +10,48 @@ class Numeros extends StatefulWidget {
 }
 
 class _NumerosState extends State<Numeros> {
+final player = AudioPlayer();
+  late List<NumeroModel> numeroList = [];
+  int? elementoSelecionado;
+
+  @override
+  void initState() {
+    super.initState();
+    loadAllData();
+  }
+
+  Future<void> loadAllData() async {
+    try {
+      // Carregar lista de alfabeto
+      List<NumeroModel> loadedAllNumero = await JogoService.getAllNumeros();
+      setState(() {
+        numeroList = loadedAllNumero;
+      });
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Erro ao carregar Números"),
+          backgroundColor: Colors.black,
+        ),
+      );
+      setState(() {
+        numeroList = [];
+      });
+    }
+  }
+
+  void changeColor(int id) {
+    setState(() {
+      if (elementoSelecionado == id) {
+        elementoSelecionado = null;
+      } else {
+        elementoSelecionado = id;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    final player = AudioPlayer();
     return SafeArea(
       child: Scaffold(
          body: GridView.count(
@@ -22,187 +63,34 @@ class _NumerosState extends State<Numeros> {
             scrollDirection: Axis.vertical,
             childAspectRatio: 1,
             children: <Widget>[
+              for (NumeroModel numero in numeroList)
                   InkWell(
                   onTap: () {
-                    player.play(AssetSource('audios/numeros/1.mp3'));
+                    player.play(AssetSource(numero.audio));
+                    changeColor(numero.id);
                   },
                   child: Container(
                     width: double.maxFinite / 2 - 100,
                     height: 150,
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 217, 231, 108),
+                      color:  elementoSelecionado == numero.id
+                        ? corSegundaria
+                        : corPrincipal,
                       border: Border.all(
                           width: 5,
-                          color: const Color.fromARGB(255, 156, 199, 83)),
+                          color: corSegundaria),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Image.asset(
-                      'assets/Imagens/numeros/1.png',
-                    ),
-                  )),
-                  InkWell(
-                  onTap: () {
-                    player.play(AssetSource('audios/numeros/2.mp3'));
-                  },
-                  child: Container(
-                    width: double.maxFinite / 2 - 100,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 217, 231, 108),
-                      border: Border.all(
-                          width: 5,
-                          color: const Color.fromARGB(255, 156, 199, 83)),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      'assets/Imagens/numeros/2.png',
-                    ),
-                  )),
-                  InkWell(
-                  onTap: () {
-                    player.play(AssetSource('audios/numeros/3.mp3'));
-                  },
-                  child: Container(
-                    width: double.maxFinite / 2 - 100,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 217, 231, 108),
-                      border: Border.all(
-                          width: 5,
-                          color: const Color.fromARGB(255, 156, 199, 83)),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      'assets/Imagens/numeros/3.png',
-                    ),
-                  )),
-                  InkWell(
-                  onTap: () {
-                    player.play(AssetSource('audios/numeros/4.mp3'));
-                  },
-                  child: Container(
-                    width: double.maxFinite / 2 - 100,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 217, 231, 108),
-                      border: Border.all(
-                          width: 5,
-                          color: const Color.fromARGB(255, 156, 199, 83)),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      'assets/Imagens/numeros/4.png',
-                    ),
-                  )),
-                  InkWell(
-                  onTap: () {
-                    player.play(AssetSource('audios/numeros/5.mp3'));
-                  },
-                  child: Container(
-                    width: double.maxFinite / 2 - 100,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 217, 231, 108),
-                      border: Border.all(
-                          width: 5,
-                          color: const Color.fromARGB(255, 156, 199, 83)),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      'assets/Imagens/numeros/5.png',
-                    ),
-                  )),
-                  InkWell(
-                  onTap: () {
-                    player.play(AssetSource('audios/numeros/6.mp3'));
-                  },
-                  child: Container(
-                    width: double.maxFinite / 2 - 100,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 217, 231, 108),
-                      border: Border.all(
-                          width: 5,
-                          color: const Color.fromARGB(255, 156, 199, 83)),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      'assets/Imagens/numeros/6.png',
-                    ),
-                  )),
-                  InkWell(
-                  onTap: () {
-                    player.play(AssetSource('audios/numeros/7.mp3'));
-                  },
-                  child: Container(
-                    width: double.maxFinite / 2 - 100,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 217, 231, 108),
-                      border: Border.all(
-                          width: 5,
-                          color: const Color.fromARGB(255, 156, 199, 83)),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      'assets/Imagens/numeros/7.png',
-                    ),
-                  )),
-                  InkWell(
-                  onTap: () {
-                    player.play(AssetSource('audios/numeros/8.mp3'));
-                  },
-                  child: Container(
-                    width: double.maxFinite / 2 - 100,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 217, 231, 108),
-                      border: Border.all(
-                          width: 5,
-                          color: const Color.fromARGB(255, 156, 199, 83)),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      'assets/Imagens/numeros/8.png',
-                    ),
-                  )),
-                   InkWell(
-                  onTap: () {
-                    player.play(AssetSource('audios/numeros/9.mp3'));
-                  },
-                  child: Container(
-                    width: double.maxFinite / 2 - 100,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 217, 231, 108),
-                      border: Border.all(
-                          width: 5,
-                          color: const Color.fromARGB(255, 156, 199, 83)),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      'assets/Imagens/numeros/9.png',
-                    ),
-                  )),
-                  InkWell(
-                  onTap: () {
-                    player.play(AssetSource('audios/numeros/10.mp3'));
-                  },
-                  child: Container(
-                    width: double.maxFinite / 2 - 100,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 217, 231, 108),
-                      border: Border.all(
-                          width: 5,
-                          color: const Color.fromARGB(255, 156, 199, 83)),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      'assets/Imagens/numeros/10.png',
+                      numero.imagem
                     ),
                   )),
             ],
           )));
+  }
+   @override
+  void dispose() {
+    player.dispose();
+    super.dispose();
   }
 }

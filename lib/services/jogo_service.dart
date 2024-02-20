@@ -192,7 +192,7 @@ class JogoService {
       ),
       const AnimalModel(
         id: 13,
-        imagem: 'assets/Imagens/animais/girafa.png',
+        imagem: 'assets/Imagens/animais/girafas.png',
         audio: 'audios/animais/girafa.mp3',
         nome: 'Girafa',
       ),
@@ -284,8 +284,7 @@ class JogoService {
     return animais;
   }
 
-
-   static Future<List<CoreModel>> getAllCores() async {
+  static Future<List<CoreModel>> getAllCores() async {
     List<CoreModel> cores = [];
 
     cores.addAll([
@@ -337,7 +336,7 @@ class JogoService {
         audio: 'audios/cores/castanha.mp3',
         nome: 'Castanha',
       ),
-       const CoreModel(
+      const CoreModel(
         id: 9,
         cor: Colors.black,
         audio: 'audios/cores/preta.mp3',
@@ -349,7 +348,6 @@ class JogoService {
         audio: 'audios/cores/lilas.mp3',
         nome: 'Lilás',
       ),
-     
       const CoreModel(
         id: 11,
         cor: Colors.white,
@@ -359,4 +357,190 @@ class JogoService {
     ]);
     return cores;
   }
+
+  static Future<List<SemanaModel>> getAllDiasDaSemana() async {
+    List<SemanaModel> semana = [];
+
+    semana.addAll([
+      const SemanaModel(
+        id: 1,
+        imagem: 'assets/Imagens/dias_da_semana/imigrante.png',
+        audio: 'audios/dias_da_semana/segunda.mp3',
+        nome: 'Segunda-Feira',
+      ),
+      const SemanaModel(
+        id: 2,
+        imagem: 'assets/Imagens/dias_da_semana/lendo-um-livro.png',
+        audio: 'audios/dias_da_semana/terca.mp3',
+        nome: 'Terça-Feira',
+      ),
+      const SemanaModel(
+        id: 3,
+        imagem: 'assets/Imagens/dias_da_semana/playtime (1).png',
+        audio: 'audios/dias_da_semana/quarta.mp3',
+        nome: 'Quarta-Feira',
+      ),
+      const SemanaModel(
+        id: 4,
+        imagem: 'assets/Imagens/dias_da_semana/playtime.png',
+        audio: 'audios/dias_da_semana/quinta.mp3',
+        nome: 'Quinta-Feira',
+      ),
+      const SemanaModel(
+        id: 5,
+        imagem: 'assets/Imagens/dias_da_semana/bebe.png',
+        audio: 'audios/dias_da_semana/sexta.mp3',
+        nome: 'Sexta-Feira',
+      ),
+      const SemanaModel(
+        id: 6,
+        imagem: 'assets/Imagens/dias_da_semana/futebol.png',
+        audio: 'audios/dias_da_semana/sabado.mp3',
+        nome: 'Sabádo',
+      ),
+      const SemanaModel(
+        id: 7,
+        imagem: 'assets/Imagens/dias_da_semana/igreja.png',
+        audio: 'audios/dias_da_semana/domingo.mp3',
+        nome: 'Domingo',
+      )
+    ]);
+    return semana;
+  }
+
+  static Future<List<NumeroModel>> getAllNumeros() async {
+    List<NumeroModel> numeros = [];
+
+    numeros.addAll([
+      const NumeroModel(
+          id: 1,
+          imagem: 'assets/Imagens/numeros/1.png',
+          audio: 'audios/numeros/1.mp3'),
+      const NumeroModel(
+          id: 2,
+          imagem: 'assets/Imagens/numeros/2.png',
+          audio: 'audios/numeros/2.mp3'),
+      const NumeroModel(
+          id: 3,
+          imagem: 'assets/Imagens/numeros/3.png',
+          audio: 'audios/numeros/3.mp3'),
+      const NumeroModel(
+          id: 4,
+          imagem: 'assets/Imagens/numeros/4.png',
+          audio: 'audios/numeros/4.mp3'),
+      const NumeroModel(
+          id: 5,
+          imagem: 'assets/Imagens/numeros/5.png',
+          audio: 'audios/numeros/5.mp3'),
+      const NumeroModel(
+          id: 6,
+          imagem: 'assets/Imagens/numeros/6.png',
+          audio: 'audios/numeros/6.mp3'),
+      const NumeroModel(
+          id: 7,
+          imagem: 'assets/Imagens/numeros/7.png',
+          audio: 'audios/numeros/7.mp3'),
+      const NumeroModel(
+          id: 8,
+          imagem: 'assets/Imagens/numeros/8.png',
+          audio: 'audios/numeros/8.mp3'),
+      const NumeroModel(
+          id: 9,
+          imagem: 'assets/Imagens/numeros/9.png',
+          audio: 'audios/numeros/9.mp3'),
+      const NumeroModel(
+          id: 10,
+          imagem: 'assets/Imagens/numeros/10.png',
+          audio: 'audios/numeros/10.mp3')
+    ]);
+    return numeros;
+    }
+
+    static Future<List<FrutaModel>> getAllFrutas() async {
+    List<FrutaModel> frutas = [];
+
+    frutas.addAll([
+      const FrutaModel(
+        id: 1,
+        imagem: 'assets/Imagens/frutas/abacate.png',
+        audio: 'audios/frutas/abacate.mp3',
+        nome: 'Abacate',
+      ),
+      const FrutaModel(
+        id: 2,
+        imagem: 'assets/Imagens/frutas/abacaxi.png',
+        audio: 'audios/frutas/abacaxi.mp3',
+        nome: 'Abacaxi',
+      ),
+      const FrutaModel(
+        id: 3,
+        imagem: 'assets/Imagens/frutas/abobora.png',
+        audio: 'audios/frutas/abobora.mp3',
+        nome: 'Abobora',
+      ),
+      const FrutaModel(
+        id: 4,
+        imagem: 'assets/Imagens/frutas/banana.png',
+        audio: 'audios/frutas/banana.mp3',
+        nome: 'Banana',
+      ),
+      const FrutaModel(
+        id: 5,
+        imagem: 'assets/Imagens/frutas/cerejas.png',
+        audio: 'audios/frutas/cereja.mp3',
+        nome: 'Cereja',
+      ),
+      const FrutaModel(
+        id: 6,
+        imagem: 'assets/Imagens/frutas/laranja.png',
+        audio: 'audios/frutas/laranja.mp3',
+        nome: 'Laranja',
+      ),
+      const FrutaModel(
+        id: 7,
+        imagem: 'assets/Imagens/frutas/limao.png',
+        audio: 'audios/frutas/limao.mp3',
+        nome: 'Limão',
+      ),
+      const FrutaModel(
+        id: 8,
+        imagem: 'assets/Imagens/frutas/maca.png',
+        audio: 'audios/frutas/maca.mp3',
+        nome: 'Maçã',
+      ),
+      const FrutaModel(
+        id: 9,
+        imagem: 'assets/Imagens/frutas/manga.png',
+        audio: 'audios/frutas/manga.mp3',
+        nome: 'Manga',
+      ),
+      const FrutaModel(
+        id: 10,
+        imagem: 'assets/Imagens/frutas/melancia.png',
+        audio: 'audios/frutas/melancia.mp3',
+        nome: 'Melancia',
+      ),
+      const FrutaModel(
+        id: 11,
+        imagem: 'assets/Imagens/frutas/morango.png',
+        audio: 'audios/frutas/morango.mp3',
+        nome: 'Morango',
+      ),
+      const FrutaModel(
+        id: 12,
+        imagem: 'assets/Imagens/frutas/pera.png',
+        audio: 'audios/frutas/pera.mp3',
+        nome: 'Pera',
+      ),
+      const FrutaModel(
+        id: 13,
+        imagem: 'assets/Imagens/frutas/uvas.png',
+        audio: 'audios/frutas/uva.mp3',
+        nome: 'Uva',
+      ),
+     
+    ]);
+    return frutas;
+  }
+
 }
