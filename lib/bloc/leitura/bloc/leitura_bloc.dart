@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:fausto/model/leitura_model.dart';
 import 'package:fausto/services/leitura_service.dart';
+// ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
 
 part 'leitura_event.dart';
@@ -18,7 +19,6 @@ class LeituraBloc extends Bloc<LeituraEvent, LeituraState> {
     emit(LeituraLoadingState());
     
     if (event is LeituraInitialEvent) {
-      print("Event 1");
       livros = await service.initList();
       livro = await service.findOne();
       emit(LeituraLoadedState(livro, livros: livros));

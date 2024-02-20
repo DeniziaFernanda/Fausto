@@ -5,7 +5,10 @@ import 'package:fausto/utils/cores.dart';
 import 'package:flutter/material.dart';
 
 class Animais extends StatefulWidget {
+  const Animais({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _AnimaisState createState() => _AnimaisState();
 }
 
@@ -30,6 +33,7 @@ class _AnimaisState extends State<Animais> {
         animalList = loadedAnimal;
       });
     } catch (e) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text("Erro ao carregar Animais"),

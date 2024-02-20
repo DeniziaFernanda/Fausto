@@ -5,7 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 class Leitura extends StatefulWidget {
+  const Leitura({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _LeituraState createState() => _LeituraState();
 }
 
@@ -27,7 +30,6 @@ class _LeituraState extends State<Leitura> {
   }
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     flutterTts.stop();
   }
@@ -41,7 +43,6 @@ class _LeituraState extends State<Leitura> {
                     bloc: leituraBloc,
                     builder: (context, state) {
                       if (state is LeituraLoadingState) {
-                        print("LeituraLoadingState");
                         return const Center(
                           child: CircularProgressIndicator(),
                         );
@@ -69,7 +70,7 @@ class _LeituraState extends State<Leitura> {
                                       flutterTts.stop();
                                       leituraBloc.add(LeituraInitialEvent());
                                     },
-                                    icon: Icon(Icons.next_plan, size: 40,),
+                                    icon: const Icon(Icons.next_plan, size: 40,),
                                   ),
                                 ],
                               ),

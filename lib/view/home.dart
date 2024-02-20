@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
             onTap: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Alfabeto()));
+                  MaterialPageRoute(builder: (context) => const Alfabeto()));
             },
             child: Container(
                 width: double.maxFinite / 2 - 100,
@@ -63,7 +63,7 @@ class Home extends StatelessWidget {
             onTap: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Numeros()));
+                  MaterialPageRoute(builder: (context) => const Numeros()));
             },
             child: Container(
                 width: double.maxFinite / 2 - 100,
@@ -96,7 +96,7 @@ class Home extends StatelessWidget {
             onTap: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Frutas()));
+                  MaterialPageRoute(builder: (context) => const Frutas()));
             },
             child: Container(
                 width: double.maxFinite / 2 - 100,
@@ -129,7 +129,7 @@ class Home extends StatelessWidget {
             onTap: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Animais()));
+                  MaterialPageRoute(builder: (context) => const Animais()));
             },
             child: Container(
                 width: double.maxFinite / 2 - 100,
@@ -162,7 +162,7 @@ class Home extends StatelessWidget {
             onTap: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => DiasDaSemana()));
+                  MaterialPageRoute(builder: (context) => const DiasDaSemana()));
             }, 
             child: Container(
                 width: double.maxFinite / 2 - 100,
@@ -195,7 +195,7 @@ class Home extends StatelessWidget {
             onTap: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Cores()));
+                  MaterialPageRoute(builder: (context) => const Cores()));
             },
             child: Container(
                 width: double.maxFinite / 2 - 100,
@@ -228,7 +228,7 @@ class Home extends StatelessWidget {
             onTap: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Desenho()));
+                  MaterialPageRoute(builder: (context) => const Desenho()));
             },
                child: Container(
                 width: double.maxFinite / 2 - 100,
@@ -261,7 +261,7 @@ class Home extends StatelessWidget {
             onTap: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => JogoQuiz()));
+                  MaterialPageRoute(builder: (context) => const JogoQuiz()));
             },
             child: Container(
                 width: double.maxFinite / 2 - 100,
@@ -294,7 +294,7 @@ class Home extends StatelessWidget {
             onTap: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Leitura()));
+                  MaterialPageRoute(builder: (context) => const Leitura()));
             },
             child: Container(
                 width: double.maxFinite / 2 - 100,

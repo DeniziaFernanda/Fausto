@@ -2,7 +2,10 @@ import 'package:fausto/utils/cores.dart';
 import 'package:flutter/material.dart';
 
 class Desenho extends StatefulWidget {
+  const Desenho({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _DesenhoState createState() => _DesenhoState();
 }
 

@@ -5,15 +5,15 @@ class JogoQuizModel {
   final String resposta;
   final List<String> universoRespostas;
 
-  get getId => this.id;
+  get getId => id;
 
-  get getPergunta => this.pergunta;
+  get getPergunta => pergunta;
 
-  get getImagem => this.imagem;
+  get getImagem => imagem;
 
-  get getResposta => this.resposta;
+  get getResposta => resposta;
 
-  get getUniversoRespostas => this.universoRespostas;
+  get getUniversoRespostas => universoRespostas;
 
   const JogoQuizModel({
     required this.id,

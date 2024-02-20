@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:fausto/model/jogo_quiz_model.dart';
 import 'package:fausto/services/jogo_quiz_service.dart';
+// ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
 
 part 'jogo_quiz_event.dart';
@@ -18,7 +19,6 @@ class JogoQuizBloc extends Bloc<JogoQuizEvent, JogoQuizState> {
     emit(JogoQuizLoadingState());
     
     if (event is JogoQuizInitialEvent) {
-      print("Event 1");
       jogos = await service.initList();
       jogo = await service.findOne();
       emit(JogoQuizLoadedState(jogo, jogos: jogos));

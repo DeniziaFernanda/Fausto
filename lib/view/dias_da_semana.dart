@@ -5,7 +5,10 @@ import 'package:fausto/utils/cores.dart';
 import 'package:flutter/material.dart';
 
 class DiasDaSemana extends StatefulWidget {
+  const DiasDaSemana({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _DiasDaSemanaState createState() => _DiasDaSemanaState();
 }
 
@@ -28,6 +31,7 @@ class _DiasDaSemanaState extends State<DiasDaSemana> {
         diasList = loadedSemana;
       });
     } catch (e) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text("Erro ao carregar dias da Semana"),

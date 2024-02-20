@@ -3,11 +3,11 @@ class LeituraModel {
   final String livro;
   final String imagem;
 
-  get getId => this.id;
+  get getId => id;
 
-  get getLivro => this.livro;
+  get getLivro => livro;
 
-  get getImagem => this.imagem;
+  get getImagem => imagem;
 
 
   const LeituraModel({

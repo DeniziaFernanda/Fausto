@@ -7,7 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class JogoQuiz extends StatefulWidget {
+  const JogoQuiz({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _JogoQuizState createState() => _JogoQuizState();
 }
 
@@ -30,7 +33,6 @@ class _JogoQuizState extends State<JogoQuiz> {
                     bloc: jogoQuizBloc,
                     builder: (context, state) {
                       if (state is JogoQuizLoadingState) {
-                        print("JogoQuizLoadingState");
                         return const Center(
                           child: CircularProgressIndicator(),
                         );

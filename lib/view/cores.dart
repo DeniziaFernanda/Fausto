@@ -5,7 +5,10 @@ import 'package:fausto/utils/cores.dart';
 import 'package:flutter/material.dart';
 
 class Cores extends StatefulWidget {
+  const Cores({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _CoresState createState() => _CoresState();
 }
 
@@ -28,6 +31,7 @@ class _CoresState extends State<Cores> {
         corList = loadedCor;
       });
     } catch (e) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text("Erro ao carregar Cores"),
