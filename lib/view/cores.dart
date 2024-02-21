@@ -1,7 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:fausto/model/jogo_model.dart';
 import 'package:fausto/services/jogo_service.dart';
-import 'package:fausto/utils/cores.dart';
 import 'package:flutter/material.dart';
 
 class Cores extends StatefulWidget {
@@ -13,9 +12,10 @@ class Cores extends StatefulWidget {
 }
 
 class _CoresState extends State<Cores> {
-  Color cor = corPrincipal;
   final player = AudioPlayer();
   late List<CoreModel> corList = [];
+  int? elementoSelecionado;
+
 
   @override
   void initState() {
@@ -44,9 +44,13 @@ class _CoresState extends State<Cores> {
     }
   }
 
-  void changeColor() {
+  void changeTamanho(int id) {
     setState(() {
-      cor = corSegundaria;
+      if (elementoSelecionado == id) {
+        elementoSelecionado = null;
+      } else {
+        elementoSelecionado = id;
+      }
     });
   }
   
@@ -68,6 +72,7 @@ class _CoresState extends State<Cores> {
           InkWell(
             onTap: () {
               player.play(AssetSource(cor.audio));
+              changeTamanho(cor.id);
             },
             child: Container(
               width: double.maxFinite / 2 - 100,
@@ -82,7 +87,7 @@ class _CoresState extends State<Cores> {
                   cor.nome,
                   style:  TextStyle(
                       color: cor.cor == Colors.white ? Colors.black : Colors.white,
-                      fontSize: 30,
+                      fontSize:  elementoSelecionado == cor.id ? 40 : 20,
                       fontWeight: FontWeight.bold),
                 ),
               ),
