@@ -13,11 +13,10 @@ class Frutas extends StatefulWidget {
 }
 
 class _FrutasState extends State<Frutas> {
-   Color cor = corPrincipal;
+  Color cor = corPrincipal;
   final player = AudioPlayer();
   late List<FrutaModel> frutaList = [];
   int? elementoSelecionado;
-
 
   @override
   void initState() {
@@ -55,55 +54,63 @@ class _FrutasState extends State<Frutas> {
       }
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            body: GridView.count(
-      primary: false,
-      padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      crossAxisCount: 2,
-      scrollDirection: Axis.vertical,
-      childAspectRatio: 1,
-      children: <Widget>[
-        for (FrutaModel fruta in frutaList)
-        InkWell(
-          onTap: () {
-            player.play(AssetSource(fruta.audio));
-             changeColor(fruta.id);
-          },
-          child: Container(
-              width: double.maxFinite / 2 - 100,
-              height: 150,
-              decoration: BoxDecoration(
-                color: elementoSelecionado == fruta.id
-                        ? corSegundaria
-                        : corPrincipal,
-                border: Border.all(
-                    width: 5, color: corSegundaria),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  SizedBox(
-                    height: 120,
-                    child: Image.asset(
-                      fruta.imagem
+            appBar: AppBar(
+              backgroundColor: corSegundaria,
+              elevation: 0,
+              toolbarHeight: 40,
+            ),
+            body: Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: GridView.count(
+                primary: false,
+                padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                crossAxisCount: 2,
+                scrollDirection: Axis.vertical,
+                childAspectRatio: 1,
+                children: <Widget>[
+                  for (FrutaModel fruta in frutaList)
+                    InkWell(
+                      onTap: () {
+                        player.play(AssetSource(fruta.audio));
+                        changeColor(fruta.id);
+                      },
+                      child: Container(
+                          width: double.maxFinite / 2 - 100,
+                          height: 150,
+                          decoration: BoxDecoration(
+                            color: elementoSelecionado == fruta.id
+                                ? corSegundaria
+                                : corPrincipal,
+                            border: Border.all(width: 5, color: corSegundaria),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              SizedBox(
+                                height: 120,
+                                child: Image.asset(fruta.imagem),
+                              ),
+                              Text(
+                                fruta.nome,
+                                style: const TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          )),
                     ),
-                  ),
-                   Text(
-                    fruta.nome,
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
                 ],
-              )),
-        ),
-      ],
-    )));
+              ),
+            )));
   }
+
   @override
   void dispose() {
     player.dispose();

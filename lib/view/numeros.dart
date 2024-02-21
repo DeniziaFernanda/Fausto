@@ -13,7 +13,7 @@ class Numeros extends StatefulWidget {
 }
 
 class _NumerosState extends State<Numeros> {
-final player = AudioPlayer();
+  final player = AudioPlayer();
   late List<NumeroModel> numeroList = [];
   int? elementoSelecionado;
 
@@ -57,42 +57,47 @@ final player = AudioPlayer();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-         body: GridView.count(
-            primary: false,
-            padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: 2,
-            scrollDirection: Axis.vertical,
-            childAspectRatio: 1,
-            children: <Widget>[
-              for (NumeroModel numero in numeroList)
-                  InkWell(
-                  onTap: () {
-                    player.play(AssetSource(numero.audio));
-                    changeColor(numero.id);
-                  },
-                  child: Container(
-                    width: double.maxFinite / 2 - 100,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color:  elementoSelecionado == numero.id
-                        ? corSegundaria
-                        : corPrincipal,
-                      border: Border.all(
-                          width: 5,
-                          color: corSegundaria),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      numero.imagem
-                    ),
-                  )),
-            ],
-          )));
+        child: Scaffold(
+            appBar: AppBar(
+              backgroundColor: corSegundaria,
+              elevation: 0,
+              toolbarHeight: 40,
+            ),
+            body: Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: GridView.count(
+                primary: false,
+                padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                crossAxisCount: 2,
+                scrollDirection: Axis.vertical,
+                childAspectRatio: 1,
+                children: <Widget>[
+                  for (NumeroModel numero in numeroList)
+                    InkWell(
+                        onTap: () {
+                          player.play(AssetSource(numero.audio));
+                          changeColor(numero.id);
+                        },
+                        child: Container(
+                          width: double.maxFinite / 2 - 100,
+                          height: 150,
+                          decoration: BoxDecoration(
+                            color: elementoSelecionado == numero.id
+                                ? corSegundaria
+                                : corPrincipal,
+                            border: Border.all(width: 5, color: corSegundaria),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Image.asset(numero.imagem),
+                        )),
+                ],
+              ),
+            )));
   }
-   @override
+
+  @override
   void dispose() {
     player.dispose();
     super.dispose();

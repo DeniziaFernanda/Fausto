@@ -1,329 +1,97 @@
-import 'package:fausto/view/alfabeto.dart';
-import 'package:fausto/view/animais.dart';
-import 'package:fausto/view/cores.dart';
-import 'package:fausto/view/desenho.dart';
-import 'package:fausto/view/dias_da_semana.dart';
-import 'package:fausto/view/frutas.dart';
-import 'package:fausto/view/jogo_quiz.dart';
-import 'package:fausto/view/leitura.dart';
-import 'package:fausto/view/numeros.dart';
+import 'package:fausto/model/jogo_model.dart';
+import 'package:fausto/services/jogo_service.dart';
+import 'package:fausto/utils/cores.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  late List<JogoModel> jogoList = [];
+
+   @override
+  void initState() {
+    super.initState();
+    loadAllData();
+  }
+
+  Future<void> loadAllData() async {
+    try {
+      // Carregar lista de alfabeto
+      List<JogoModel> loadedJogo = await JogoService.getAllJogos();
+      setState(() {
+        jogoList = loadedJogo;
+      });
+    } catch (e) {
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Erro ao carregar Jogos"),
+          backgroundColor: Colors.black,
+        ),
+      );
+      setState(() {
+        jogoList = [];
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.white,
-          body: GridView.count(
-            primary: false,
-            padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: 2,
-            scrollDirection: Axis.vertical,
-            childAspectRatio: 1,
-            children: <Widget>[
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Alfabeto()));
-            },
-            child: Container(
-                width: double.maxFinite / 2 - 100,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 217, 231, 108),
-                  border: Border.all(
-                      width: 5, color: const Color.fromARGB(255, 156, 199, 83)),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 120,
-                      child: Image.asset(
-                        'assets/Imagens/alfabeto/bloco-abc.png',
+          body: Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: GridView.count(
+              primary: false,
+              padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              scrollDirection: Axis.vertical,
+              childAspectRatio: 1,
+              children: <Widget>[
+                for (JogoModel jogo in jogoList)
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>  jogo.jogo));
+                  },
+                  child: Container(
+                      width: double.maxFinite / 2 - 100,
+                      height: 150,
+                      decoration: BoxDecoration(
+                        color: corPrincipal,
+                        border: Border.all(
+                            width: 5,
+                            color: corSegundaria),
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                    ),
-                    const Text(
-                        "Alfabeto",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                )),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Numeros()));
-            },
-            child: Container(
-                width: double.maxFinite / 2 - 100,
-             height: 150,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 217, 231, 108),
-                  border: Border.all(
-                      width: 5, color: const Color.fromARGB(255, 156, 199, 83)),
-                  borderRadius: BorderRadius.circular(20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          SizedBox(
+                            height: 120,
+                            child: Image.asset(jogo.imagem),
+                          ),
+                           Text(
+                            jogo.nome,
+                            style: const TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      )),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 120,
-                      child: Image.asset(
-                        'assets/Imagens/numeros/numeros.png',
-                      ),
-                    ),
-                    const Text(
-                        "Números",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                )),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Frutas()));
-            },
-            child: Container(
-                width: double.maxFinite / 2 - 100,
-             height: 150,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 217, 231, 108),
-                  border: Border.all(
-                      width: 5, color: const Color.fromARGB(255, 156, 199, 83)),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 120,
-                      child: Image.asset(
-                        'assets/Imagens/frutas/frutas.png',
-                      ),
-                    ),
-                    const Text(
-                        "Frutas",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                )),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Animais()));
-            },
-            child: Container(
-                width: double.maxFinite / 2 - 100,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 217, 231, 108),
-                  border: Border.all(
-                      width: 5, color: const Color.fromARGB(255, 156, 199, 83)),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 120,
-                      child: Image.asset(
-                        'assets/Imagens/animais/animais.png',
-                      ),
-                    ),
-                    const Text(
-                        "Animais",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                )),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const DiasDaSemana()));
-            }, 
-            child: Container(
-                width: double.maxFinite / 2 - 100,
-               height: 150,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 217, 231, 108),
-                  border: Border.all(
-                      width: 5, color: const Color.fromARGB(255, 156, 199, 83)),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 120,
-                      child: Image.asset(
-                        'assets/Imagens/dias_da_semana/menina.png',
-                      ),
-                    ),
-                    const Text(
-                        "Dias da Semana",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                )),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Cores()));
-            },
-            child: Container(
-                width: double.maxFinite / 2 - 100,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 217, 231, 108),
-                  border: Border.all(
-                      width: 5, color: const Color.fromARGB(255, 156, 199, 83)),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 120,
-                      child: Image.asset(
-                        'assets/Imagens/cores/roda-de-cores.png',
-                      ),
-                    ),
-                    const Text(
-                        "Cores",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                )),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Desenho()));
-            },
-               child: Container(
-                width: double.maxFinite / 2 - 100,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 217, 231, 108),
-                  border: Border.all(
-                      width: 5, color: const Color.fromARGB(255, 156, 199, 83)),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 120,
-                      child: Image.asset(
-                        'assets/Imagens/desenho/paleta-de-cores.png',
-                      ),
-                    ),
-                    const Text(
-                        "Desenho",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                )),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const JogoQuiz()));
-            },
-            child: Container(
-                width: double.maxFinite / 2 - 100,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 217, 231, 108),
-                  border: Border.all(
-                      width: 5, color: const Color.fromARGB(255, 156, 199, 83)),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 120,
-                      child: Image.asset(
-                        'assets/Imagens/jogo_quiz/pergunta.png',
-                      ),
-                    ),
-                    const Text(
-                        "Jogo Quiz",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                )),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Leitura()));
-            },
-            child: Container(
-                width: double.maxFinite / 2 - 100,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 217, 231, 108),
-                  border: Border.all(
-                      width: 5, color: const Color.fromARGB(255, 156, 199, 83)),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 120,
-                      child: Image.asset(
-                        'assets/Imagens/leitura/leitura.png',
-                      ),
-                    ),
-                    const Text(
-                        "Leitura",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                )),
-          ),
-            ],
+              ],
+            ),
           )),
     );
   }

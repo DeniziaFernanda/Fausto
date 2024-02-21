@@ -18,7 +18,6 @@ class _AnimaisState extends State<Animais> {
   late List<AnimalModel> animalList = [];
   int? elementoSelecionado;
 
-
   @override
   void initState() {
     super.initState();
@@ -61,48 +60,56 @@ class _AnimaisState extends State<Animais> {
     final player = AudioPlayer();
     return SafeArea(
         child: Scaffold(
-            body: GridView.count(
-      primary: false,
-      padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      crossAxisCount: 2,
-      scrollDirection: Axis.vertical,
-      childAspectRatio: 1,
-      children: <Widget>[
-        for (AnimalModel animais in animalList)
-        InkWell(
-          onTap: () {
-                    player.play(AssetSource(animais.audio));
-                    changeColor(animais.id);
-                  },
-          child: Container(
-              width: double.maxFinite / 2 - 100,
-              height: 150,
-              decoration: BoxDecoration(
-                color: elementoSelecionado == animais.id
-                        ? corSegundaria
-                        : corPrincipal,
-                border: Border.all(
-                    width: 5, color: corSegundaria),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  SizedBox(
-                    height: 120,
-                    child: Image.asset(animais.imagem),
-                  ),
-                   Text(animais.nome,
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
+            appBar: AppBar(
+              backgroundColor: corSegundaria,
+              elevation: 0,
+              toolbarHeight: 40,
+            ),
+            body: Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: GridView.count(
+                primary: false,
+                padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                crossAxisCount: 2,
+                scrollDirection: Axis.vertical,
+                childAspectRatio: 1,
+                children: <Widget>[
+                  for (AnimalModel animais in animalList)
+                    InkWell(
+                      onTap: () {
+                        player.play(AssetSource(animais.audio));
+                        changeColor(animais.id);
+                      },
+                      child: Container(
+                          width: double.maxFinite / 2 - 100,
+                          height: 150,
+                          decoration: BoxDecoration(
+                            color: elementoSelecionado == animais.id
+                                ? corSegundaria
+                                : corPrincipal,
+                            border: Border.all(width: 5, color: corSegundaria),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              SizedBox(
+                                height: 120,
+                                child: Image.asset(animais.imagem),
+                              ),
+                              Text(
+                                animais.nome,
+                                style: const TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          )),
+                    ),
                 ],
-              )),
-        ),
-       
-      ],
-    )));
+              ),
+            )));
   }
 
   @override

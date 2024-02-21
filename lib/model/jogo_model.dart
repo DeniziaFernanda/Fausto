@@ -1,5 +1,19 @@
 import 'package:flutter/material.dart';
 
+class JogoModel {
+  final int id;
+  final String imagem;
+  final String nome;
+  final Widget jogo;
+
+  const JogoModel({
+    required this.id,
+    required this.imagem,
+    required this.nome,
+    required this.jogo,
+  });
+}
+
 class AlfabetoModel {
   final int id;
   final String imagem;

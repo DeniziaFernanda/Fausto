@@ -3,6 +3,7 @@ import 'package:fausto/model/jogo_model.dart';
 import 'package:fausto/services/jogo_service.dart';
 import 'package:fausto/utils/cores.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Alfabeto extends StatefulWidget {
   const Alfabeto({super.key});
@@ -58,36 +59,44 @@ class _AlfabetoState extends State<Alfabeto> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: corSegundaria,
+          elevation: 0,
+          toolbarHeight: 40,
+        ),
         backgroundColor: Colors.white,
-        body: GridView.count(
-          primary: false,
-          padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          crossAxisCount: 2,
-          scrollDirection: Axis.vertical,
-          childAspectRatio: 1,
-          children: <Widget>[
-            for (AlfabetoModel alfabeto in alfabetoList)
-              InkWell(
-                onTap: () {
-                  player.play(AssetSource(alfabeto.audio));
-                  changeColor(alfabeto.id);
-                },
-                child: Container(
-                  width: double.maxFinite / 2 - 100,
-                  height: 150,
-                  decoration: BoxDecoration(
-                    color: elementoSelecionado == alfabeto.id
-                        ? corSegundaria
-                        : corPrincipal,
-                    border: Border.all(width: 5, color: corSegundaria),
-                    borderRadius: BorderRadius.circular(20),
+        body: Padding(
+          padding: const EdgeInsets.only(bottom: 20),
+          child: GridView.count(
+            primary: false,
+            padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            crossAxisCount: 2,
+            scrollDirection: Axis.vertical,
+            childAspectRatio: 1,
+            children: <Widget>[
+              for (AlfabetoModel alfabeto in alfabetoList)
+                InkWell(
+                  onTap: () {
+                    player.play(AssetSource(alfabeto.audio));
+                    changeColor(alfabeto.id);
+                  },
+                  child: Container(
+                    width: double.maxFinite / 2 - 100,
+                    height: 150,
+                    decoration: BoxDecoration(
+                      color: elementoSelecionado == alfabeto.id
+                          ? corSegundaria
+                          : corPrincipal,
+                      border: Border.all(width: 5, color: corSegundaria),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Image.asset(alfabeto.imagem),
                   ),
-                  child: Image.asset(alfabeto.imagem),
                 ),
-              ),
-          ],
+            ],
+          ),
         ),
       ),
     );

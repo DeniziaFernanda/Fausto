@@ -1,7 +1,80 @@
 import 'package:fausto/model/jogo_model.dart';
+import 'package:fausto/view/alfabeto.dart';
+import 'package:fausto/view/animais.dart';
+import 'package:fausto/view/cores.dart';
+import 'package:fausto/view/desenho.dart';
+import 'package:fausto/view/dias_da_semana.dart';
+import 'package:fausto/view/frutas.dart';
+import 'package:fausto/view/jogo_quiz.dart';
+import 'package:fausto/view/leitura.dart';
+import 'package:fausto/view/numeros.dart';
 import 'package:flutter/material.dart';
 
 class JogoService {
+
+  static Future<List<JogoModel>> getAllJogos() async{
+    List<JogoModel> jogos = [];
+
+    jogos.addAll([
+       const JogoModel(
+        id: 1, 
+        imagem: 'assets/Imagens/alfabeto/bloco-abc.png', 
+        nome: "Alfabeto", 
+        jogo: Alfabeto()
+        ),
+        const JogoModel(
+        id: 2, 
+        imagem: 'assets/Imagens/numeros/numeros.png', 
+        nome: "Números", 
+        jogo: Numeros()
+        ),
+        const JogoModel(
+        id: 3, 
+        imagem: 'assets/Imagens/frutas/frutas.png', 
+        nome: "Frutas", 
+        jogo: Frutas()
+        ),
+        const JogoModel(
+        id: 4, 
+        imagem: 'assets/Imagens/animais/animais.png', 
+        nome: "Animais", 
+        jogo: Animais()
+        ),
+        const JogoModel(
+        id: 5, 
+        imagem: 'assets/Imagens/dias_da_semana/menina.png', 
+        nome: "Dias da Semana", 
+        jogo: DiasDaSemana()
+        ),
+        const JogoModel(
+        id: 6, 
+        imagem: 'assets/Imagens/cores/roda-de-cores.png', 
+        nome: "Cores", 
+        jogo: Cores()
+        ),
+        const JogoModel(
+        id: 7, 
+        imagem: 'assets/Imagens/desenho/paleta-de-cores.png', 
+        nome: "Desenho", 
+        jogo: Desenho()
+        ),
+        const JogoModel(
+        id: 8, 
+        imagem: 'assets/Imagens/jogo_quiz/pergunta.png', 
+        nome: "Jogo Quiz", 
+        jogo: JogoQuiz()
+        ),
+        const JogoModel(
+        id: 9, 
+        imagem: 'assets/Imagens/leitura/leitura.png', 
+        nome: "Leitura", 
+        jogo: Leitura()
+        ),
+    ]);
+
+    return jogos;
+  }
+
   static Future<List<AlfabetoModel>> getAllAlfabeto() async {
     List<AlfabetoModel> alfabeto = [];
 
@@ -456,7 +529,7 @@ class JogoService {
     return numeros;
     }
 
-    static Future<List<FrutaModel>> getAllFrutas() async {
+  static Future<List<FrutaModel>> getAllFrutas() async {
     List<FrutaModel> frutas = [];
 
     frutas.addAll([
