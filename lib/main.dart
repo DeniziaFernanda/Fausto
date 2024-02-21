@@ -6,8 +6,9 @@ void main() {
   
   runApp( MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Fausto',
         theme: ThemeData(
+          useMaterial3: false,
           fontFamily: 'Poppins',
           primarySwatch: corPrincipal,
         ),

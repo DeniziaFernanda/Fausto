@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:fausto/bloc/jogo_quiz/bloc/jogo_quiz_bloc.dart';
 import 'package:fausto/model/jogo_quiz_model.dart';
+import 'package:fausto/utils/cores.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,6 +16,7 @@ class JogoQuiz extends StatefulWidget {
 }
 
 class _JogoQuizState extends State<JogoQuiz> {
+  List<Color> buttonColors = List.generate(4, (_) => corPrincipal);
   late final JogoQuizBloc jogoQuizBloc;
   final player = AudioPlayer();
   @override
@@ -76,94 +78,141 @@ class _JogoQuizState extends State<JogoQuiz> {
                               width: 360,
                               height: 60,
                               child: ElevatedButton(
-                                  onPressed: () {
+                                onPressed: () {
+                                  setState(() {
                                     if (jogoQuiz
                                             .universoRespostas[posicoes[0]] ==
                                         jogoQuiz.resposta) {
-                                          
+                                      buttonColors[0] = Colors.green;
                                       player.play(AssetSource(
                                           'audios/respostas/som_de_resposta_certa.mp3'));
                                     } else {
+                                      buttonColors[0] = Colors.red;
                                       player.play(AssetSource(
                                           'audios/respostas/som_de_resposta_errada.mp3'));
                                     }
                                     Future.delayed(
                                       const Duration(seconds: 1),
-                                      () => jogoQuizBloc
-                                          .add(JogoQuizInitialEvent()),
+                                      () => {
+                                        buttonColors[0] = corPrincipal,
+                                        jogoQuizBloc.add(JogoQuizInitialEvent()),
+                                          }
                                     );
-                                  },
-                                  child: Text(
-                                      jogoQuiz.universoRespostas[posicoes[0]])),
+                                  });
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          buttonColors[0]),
+                                ),
+                                child: Text(
+                                    jogoQuiz.universoRespostas[posicoes[0]]),
+                              ),
                             ),
                             SizedBox(
                               width: 360,
                               height: 60,
                               child: ElevatedButton(
-                                  onPressed: () {
+                                onPressed: () {
+                                  setState(() {
                                     if (jogoQuiz
                                             .universoRespostas[posicoes[1]] ==
                                         jogoQuiz.resposta) {
+                                      buttonColors[1] = Colors.green;
                                       player.play(AssetSource(
                                           'audios/respostas/som_de_resposta_certa.mp3'));
                                     } else {
+                                      buttonColors[1] = Colors.red;
                                       player.play(AssetSource(
                                           'audios/respostas/som_de_resposta_errada.mp3'));
                                     }
                                     Future.delayed(
                                       const Duration(seconds: 1),
-                                      () => jogoQuizBloc
-                                          .add(JogoQuizInitialEvent()),
+                                      () => {
+                                        buttonColors[1] = corPrincipal,
+                                        jogoQuizBloc.add(JogoQuizInitialEvent()),
+                                          },
                                     );
-                                  },
-                                  child: Text(
-                                      jogoQuiz.universoRespostas[posicoes[1]])),
+                                  });
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          buttonColors[1]),
+                                ),
+                                child: Text(
+                                    jogoQuiz.universoRespostas[posicoes[1]]),
+                              ),
                             ),
                             SizedBox(
                               width: 360,
                               height: 60,
                               child: ElevatedButton(
-                                  onPressed: () {
+                                onPressed: () {
+                                  setState(() {
                                     if (jogoQuiz
                                             .universoRespostas[posicoes[2]] ==
                                         jogoQuiz.resposta) {
+                                      buttonColors[2] = Colors.green;
                                       player.play(AssetSource(
                                           'audios/respostas/som_de_resposta_certa.mp3'));
                                     } else {
+                                      buttonColors[2] = Colors.red;
                                       player.play(AssetSource(
                                           'audios/respostas/som_de_resposta_errada.mp3'));
                                     }
                                     Future.delayed(
                                       const Duration(seconds: 1),
-                                      () => jogoQuizBloc
-                                          .add(JogoQuizInitialEvent()),
+                                      () => {
+                                        buttonColors[2] = corPrincipal,
+                                        jogoQuizBloc.add(JogoQuizInitialEvent()),
+                                          },
                                     );
-                                  },
-                                  child: Text(
-                                      jogoQuiz.universoRespostas[posicoes[2]])),
+                                  });
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          buttonColors[2]),
+                                ),
+                                child: Text(
+                                    jogoQuiz.universoRespostas[posicoes[2]]),
+                              ),
                             ),
                             SizedBox(
                               width: 360,
                               height: 60,
                               child: ElevatedButton(
-                                  onPressed: () {
+                                onPressed: () {
+                                  setState(() {
                                     if (jogoQuiz
                                             .universoRespostas[posicoes[3]] ==
                                         jogoQuiz.resposta) {
+                                      buttonColors[3] = Colors.green;
                                       player.play(AssetSource(
                                           'audios/respostas/som_de_resposta_certa.mp3'));
                                     } else {
+                                      buttonColors[3] = Colors.red;
                                       player.play(AssetSource(
                                           'audios/respostas/som_de_resposta_errada.mp3'));
                                     }
                                     Future.delayed(
                                       const Duration(seconds: 1),
-                                      () => jogoQuizBloc
-                                          .add(JogoQuizInitialEvent()),
+                                      () => {
+                                        buttonColors[3] = corPrincipal,
+                                        jogoQuizBloc.add(JogoQuizInitialEvent()),
+                                          },
                                     );
-                                  },
-                                  child: Text(
-                                      jogoQuiz.universoRespostas[posicoes[3]])),
+                                  });
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          buttonColors[3]),
+                                ),
+                                child: Text(
+                                    jogoQuiz.universoRespostas[posicoes[3]]),
+                              ),
                             ),
                           ],
                         );
