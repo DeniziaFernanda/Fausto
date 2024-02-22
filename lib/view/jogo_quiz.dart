@@ -4,6 +4,8 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:fausto/bloc/cubit/jogo_quiz_cubit.dart';
 import 'package:fausto/model/jogo_quiz_model.dart';
 import 'package:fausto/utils/cores.dart';
+import 'package:fausto/view/home.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -63,6 +65,27 @@ class _JogoQuizState extends State<JogoQuiz> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
+                      Container(
+                          padding: EdgeInsets.only(left: 5),
+                          alignment: Alignment.topLeft,
+                          child: FloatingActionButton(
+                            backgroundColor: corSegundaria,
+                            heroTag: "Home",
+                            onPressed: () {
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const Home(),
+                                  ),
+                                  (route) => false);
+                            },
+                            child: const Icon(
+                              Icons.arrow_back,
+                              color: Colors.black,
+                              size: 30,
+                            ),
+                          ),
+                        ),
                       SizedBox(
                         width: 350,
                         child: Image.asset(jogoQuiz.imagem),

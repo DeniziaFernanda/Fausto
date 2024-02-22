@@ -1,5 +1,7 @@
 import 'package:fausto/utils/cores.dart';
+import 'package:fausto/view/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Desenho extends StatefulWidget {
   const Desenho({super.key});
@@ -59,8 +61,7 @@ class _DesenhoState extends State<Desenho> {
                 if (pontoCorrente == null) return;
 
                 pontoCorrente = pontoCorrente?.copyWith(
-                  offsets: pontoCorrente!.offsets
-                    ..add(details.localPosition),
+                  offsets: pontoCorrente!.offsets..add(details.localPosition),
                 );
                 pincel.last = pontoCorrente!;
                 historicoPincel = List.of(pincel);
@@ -126,7 +127,7 @@ class _DesenhoState extends State<Desenho> {
             right: 0,
             bottom: 150,
             child: RotatedBox(
-              quarterTurns: 3, 
+              quarterTurns: 3,
               child: Slider(
                 value: tamanhoSelecionado,
                 min: 1,
@@ -141,37 +142,66 @@ class _DesenhoState extends State<Desenho> {
           ),
         ],
       ),
-      floatingActionButton: Row(
-        children: [
-          FloatingActionButton(
-            heroTag: "Undo",
-            onPressed: () {
-              if (pincel.isNotEmpty && historicoPincel.isNotEmpty) {
-                setState(() {
-                  pincel.removeLast();
-                });
-              }
-            },
-            child: const Icon(Icons.undo),
-          ),
-          const SizedBox(width: 16),
-          FloatingActionButton(
-            heroTag: "Redo",
-            onPressed: () {
-              setState(() {
-                if (pincel.length < historicoPincel.length) {
-                  final index = pincel.length;
-                  pincel.add(historicoPincel[index]);
-                }
-              });
-            },
-            child: const Icon(Icons.redo),
-          ),
-        ],
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(left: 20),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                FloatingActionButton(
+                  heroTag: "Undo",
+                  onPressed: () {
+                    if (pincel.isNotEmpty && historicoPincel.isNotEmpty) {
+                      setState(() {
+                        pincel.removeLast();
+                      });
+                    }
+                  },
+                  child: const Icon(Icons.undo),
+                ),
+                const SizedBox(width: 16),
+                FloatingActionButton(
+                  heroTag: "Redo",
+                  onPressed: () {
+                    setState(() {
+                      if (pincel.length < historicoPincel.length) {
+                        final index = pincel.length;
+                        pincel.add(historicoPincel[index]);
+                      }
+                    });
+                  },
+                  child: const Icon(Icons.redo),
+                ),
+              ],
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: FloatingActionButton(
+                backgroundColor: corSegundaria,
+                heroTag: "Home",
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Home(),
+                      ),
+                      (route) => false);
+                },
+                child: const Icon(
+                  Icons.arrow_back,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+
 class Pincel {
   int id;
   List<Offset> offsets;
@@ -194,6 +224,7 @@ class Pincel {
     );
   }
 }
+
 class Pintor extends CustomPainter {
   final List<Pincel> pincel;
 
@@ -227,4 +258,3 @@ class Pintor extends CustomPainter {
     return true;
   }
 }
-
