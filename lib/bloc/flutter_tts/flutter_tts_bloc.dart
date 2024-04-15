@@ -17,7 +17,7 @@ class FlutterTtsBloc extends Bloc<FlutterTtsEvent, FlutterTtsState> {
 
   Future<void> configureFlutterTts() async {
     await flutterTts.setLanguage(language);
-    await flutterTts.setPitch(1);
+    await flutterTts.setPitch(0.8);
   }
 
   Future<void> _onFlutterTtsEventStop(
