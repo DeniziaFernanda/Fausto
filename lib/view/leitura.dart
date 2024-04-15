@@ -1,4 +1,6 @@
+import 'package:fausto/bloc/flutter_tts/flutter_tts_bloc.dart';
 import 'package:fausto/bloc/leitura/bloc/leitura_bloc.dart';
+import 'package:fausto/dependencies/get_it.dart';
 import 'package:fausto/model/leitura_model.dart';
 import 'package:fausto/utils/cores.dart';
 import 'package:fausto/view/home.dart';
@@ -17,17 +19,16 @@ class Leitura extends StatefulWidget {
 
 class _LeituraState extends State<Leitura> {
   late final LeituraBloc leituraBloc;
-  final FlutterTts flutterTts = FlutterTts();
+  late final FlutterTtsBloc flutterTtsBloc;
 
   leitor(String text) async {
-    await flutterTts.setLanguage("pt-PT");
-    await flutterTts.setPitch(1); // 0.5 A 1.5
-    await flutterTts.speak(text);
+    flutterTtsBloc.add(FlutterTtsEventSpeak(text));
   }
 
   @override
   void initState() {
     super.initState();
+    flutterTtsBloc = getIt<FlutterTtsBloc>();
     leituraBloc = LeituraBloc();
     leituraBloc.add(LeituraInitialEvent());
   }
@@ -35,7 +36,7 @@ class _LeituraState extends State<Leitura> {
   @override
   void dispose() {
     super.dispose();
-    flutterTts.stop();
+    flutterTtsBloc.add(FlutterTtsEventStop());
   }
 
   @override
@@ -100,7 +101,7 @@ class _LeituraState extends State<Leitura> {
                               FloatingActionButton(
                                 heroTag: "Proximo",
                                 onPressed: () {
-                                  flutterTts.stop();
+                                  flutterTtsBloc.add(FlutterTtsEventStop());
                                   leituraBloc.add(LeituraInitialEvent());
                                 },
                                 child: const Icon(
