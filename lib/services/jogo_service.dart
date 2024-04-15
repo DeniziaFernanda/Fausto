@@ -503,42 +503,52 @@ class JogoService {
     numeros.addAll([
       const NumeroModel(
           id: 1,
+          numero: '1',
           imagem: 'assets/Imagens/numeros/1.png',
           audio: 'audios/numeros/1.mp3'),
       const NumeroModel(
           id: 2,
+          numero: '2',
           imagem: 'assets/Imagens/numeros/2.png',
           audio: 'audios/numeros/2.mp3'),
       const NumeroModel(
           id: 3,
+          numero: '3',
           imagem: 'assets/Imagens/numeros/3.png',
           audio: 'audios/numeros/3.mp3'),
       const NumeroModel(
           id: 4,
+          numero: '4',
           imagem: 'assets/Imagens/numeros/4.png',
           audio: 'audios/numeros/4.mp3'),
       const NumeroModel(
           id: 5,
+          numero: '5',
           imagem: 'assets/Imagens/numeros/5.png',
           audio: 'audios/numeros/5.mp3'),
       const NumeroModel(
           id: 6,
+          numero: '6',
           imagem: 'assets/Imagens/numeros/6.png',
           audio: 'audios/numeros/6.mp3'),
       const NumeroModel(
           id: 7,
+          numero: '7',
           imagem: 'assets/Imagens/numeros/7.png',
           audio: 'audios/numeros/7.mp3'),
       const NumeroModel(
           id: 8,
+          numero: '8',
           imagem: 'assets/Imagens/numeros/8.png',
           audio: 'audios/numeros/8.mp3'),
       const NumeroModel(
           id: 9,
+          numero: '9',
           imagem: 'assets/Imagens/numeros/9.png',
           audio: 'audios/numeros/9.mp3'),
       const NumeroModel(
           id: 10,
+          numero: '10',
           imagem: 'assets/Imagens/numeros/10.png',
           audio: 'audios/numeros/10.mp3')
     ]);
