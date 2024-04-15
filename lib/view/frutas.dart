@@ -1,4 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:fausto/bloc/flutter_tts/flutter_tts_bloc.dart';
+import 'package:fausto/dependencies/get_it.dart';
 import 'package:fausto/model/jogo_model.dart';
 import 'package:fausto/services/jogo_service.dart';
 import 'package:fausto/utils/cores.dart';
@@ -78,7 +80,8 @@ class _FrutasState extends State<Frutas> {
                   for (FrutaModel fruta in frutaList)
                     InkWell(
                       onTap: () {
-                        player.play(AssetSource(fruta.audio));
+                        // player.play(AssetSource(fruta.audio));
+                        getIt<FlutterTtsBloc>().add(FlutterTtsEventSpeak(fruta.nome));
                         changeColor(fruta.id);
                       },
                       child: Container(
