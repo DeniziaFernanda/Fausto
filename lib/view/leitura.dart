@@ -5,9 +5,7 @@ import 'package:fausto/model/leitura_model.dart';
 import 'package:fausto/utils/cores.dart';
 import 'package:fausto/view/home.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 
 class Leitura extends StatefulWidget {
   const Leitura({super.key});

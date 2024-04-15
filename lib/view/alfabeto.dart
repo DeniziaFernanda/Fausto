@@ -1,9 +1,10 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:fausto/bloc/flutter_tts/flutter_tts_bloc.dart';
+import 'package:fausto/dependencies/get_it.dart';
 import 'package:fausto/model/jogo_model.dart';
 import 'package:fausto/services/jogo_service.dart';
 import 'package:fausto/utils/cores.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Alfabeto extends StatefulWidget {
   const Alfabeto({super.key});
@@ -79,7 +80,8 @@ class _AlfabetoState extends State<Alfabeto> {
               for (AlfabetoModel alfabeto in alfabetoList)
                 InkWell(
                   onTap: () {
-                    player.play(AssetSource(alfabeto.audio));
+                    // player.play(AssetSo0urce(alfabeto.audio));
+                    getIt<FlutterTtsBloc>().add(FlutterTtsEventSpeak(alfabeto.letra));
                     changeColor(alfabeto.id);
                   },
                   child: Container(
