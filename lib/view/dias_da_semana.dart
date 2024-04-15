@@ -1,4 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:fausto/bloc/flutter_tts/flutter_tts_bloc.dart';
+import 'package:fausto/dependencies/get_it.dart';
 import 'package:fausto/model/jogo_model.dart';
 import 'package:fausto/services/jogo_service.dart';
 import 'package:fausto/utils/cores.dart';
@@ -77,7 +79,8 @@ class _DiasDaSemanaState extends State<DiasDaSemana> {
                   for (SemanaModel dia in diasList)
                     InkWell(
                       onTap: () {
-                        player.play(AssetSource(dia.audio));
+                        // player.play(AssetSource(dia.audio));
+                        getIt<FlutterTtsBloc>().add(FlutterTtsEventSpeak(dia.nome));
                         changeColor(dia.id);
                       },
                       child: Container(
