@@ -17,12 +17,12 @@ class JogoModel {
 class AlfabetoModel {
   final int id;
   final String imagem;
-  final String audio;
+  final String nome;
 
   const AlfabetoModel({
     required this.id,
     required this.imagem,
-    required this.audio,
+    required this.nome,
   });
 }
 

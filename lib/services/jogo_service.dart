@@ -82,107 +82,107 @@ class JogoService {
       const AlfabetoModel(
           id: 1,
           imagem: 'assets/Imagens/alfabeto/a.png',
-          audio: 'audios/alfabeto/a.mp3'),
+          nome: 'a de Árvore'),
       const AlfabetoModel(
           id: 2,
           imagem: 'assets/Imagens/alfabeto/b.png',
-          audio: 'audios/alfabeto/b.mp3'),
+          nome: 'b'),
       const AlfabetoModel(
           id: 3,
           imagem: 'assets/Imagens/alfabeto/c.png',
-          audio: 'audios/alfabeto/c.mp3'),
+          nome: 'c'),
       const AlfabetoModel(
           id: 4,
           imagem: 'assets/Imagens/alfabeto/d.png',
-          audio: 'audios/alfabeto/d.mp3'),
+          nome: 'd'),
       const AlfabetoModel(
           id: 5,
           imagem: 'assets/Imagens/alfabeto/e.png',
-          audio: 'audios/alfabeto/e.mp3'),
+          nome: 'e'),
       const AlfabetoModel(
           id: 6,
           imagem: 'assets/Imagens/alfabeto/f.png',
-          audio: 'audios/alfabeto/f.mp3'),
+          nome: 'f'),
       const AlfabetoModel(
           id: 7,
           imagem: 'assets/Imagens/alfabeto/g.png',
-          audio: 'audios/alfabeto/g.mp3'),
+          nome: 'g'),
       const AlfabetoModel(
           id: 8,
           imagem: 'assets/Imagens/alfabeto/h.png',
-          audio: 'audios/alfabeto/h.mp3'),
+          nome: 'h'),
       const AlfabetoModel(
           id: 9,
           imagem: 'assets/Imagens/alfabeto/i.png',
-          audio: 'audios/alfabeto/i.mp3'),
+          nome: 'i'),
       const AlfabetoModel(
           id: 10,
           imagem: 'assets/Imagens/alfabeto/j.png',
-          audio: 'audios/alfabeto/j.mp3'),
+          nome: 'j'),
       const AlfabetoModel(
           id: 11,
           imagem: 'assets/Imagens/alfabeto/k.png',
-          audio: 'audios/alfabeto/k.mp3'),
+          nome: 'k'),
       const AlfabetoModel(
           id: 12,
           imagem: 'assets/Imagens/alfabeto/l.png',
-          audio: 'audios/alfabeto/l.mp3'),
+          nome: 'l'),
       const AlfabetoModel(
           id: 13,
           imagem: 'assets/Imagens/alfabeto/m.png',
-          audio: 'audios/alfabeto/m.mp3'),
+          nome: 'm'),
       const AlfabetoModel(
           id: 14,
           imagem: 'assets/Imagens/alfabeto/n.png',
-          audio: 'audios/alfabeto/n.mp3'),
+          nome: 'n'),
       const AlfabetoModel(
           id: 15,
           imagem: 'assets/Imagens/alfabeto/o.png',
-          audio: 'audios/alfabeto/o.mp3'),
+          nome: 'o'),
       const AlfabetoModel(
           id: 16,
           imagem: 'assets/Imagens/alfabeto/p.png',
-          audio: 'audios/alfabeto/p.mp3'),
+          nome: 'p'),
       const AlfabetoModel(
           id: 17,
           imagem: 'assets/Imagens/alfabeto/q.png',
-          audio: 'audios/alfabeto/q.mp3'),
+          nome: 'q'),
       const AlfabetoModel(
           id: 18,
           imagem: 'assets/Imagens/alfabeto/r.png',
-          audio: 'audios/alfabeto/r.mp3'),
+          nome: 'r'),
       const AlfabetoModel(
           id: 19,
           imagem: 'assets/Imagens/alfabeto/s.png',
-          audio: 'audios/alfabeto/s.mp3'),
+          nome: 's'),
       const AlfabetoModel(
           id: 20,
           imagem: 'assets/Imagens/alfabeto/t.png',
-          audio: 'audios/alfabeto/t.mp3'),
+          nome: 't'),
       const AlfabetoModel(
           id: 21,
           imagem: 'assets/Imagens/alfabeto/u.png',
-          audio: 'audios/alfabeto/u.mp3'),
+          nome: 'u'),
       const AlfabetoModel(
           id: 22,
           imagem: 'assets/Imagens/alfabeto/v.png',
-          audio: 'audios/alfabeto/v.mp3'),
+          nome: 'v'),
       const AlfabetoModel(
           id: 23,
           imagem: 'assets/Imagens/alfabeto/w.png',
-          audio: 'audios/alfabeto/w.mp3'),
+          nome: 'w'),
       const AlfabetoModel(
           id: 24,
           imagem: 'assets/Imagens/alfabeto/x.png',
-          audio: 'audios/alfabeto/x.mp3'),
+          nome: 'x'),
       const AlfabetoModel(
           id: 25,
           imagem: 'assets/Imagens/alfabeto/y.png',
-          audio: 'audios/alfabeto/y.mp3'),
+          nome: 'y'),
       const AlfabetoModel(
           id: 26,
           imagem: 'assets/Imagens/alfabeto/z.png',
-          audio: 'audios/alfabeto/z.mp3'),
+          nome: 'z'),
     ]);
     return alfabeto;
   }

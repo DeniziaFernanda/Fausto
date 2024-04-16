@@ -1,9 +1,8 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:fausto/model/jogo_model.dart';
 import 'package:fausto/services/jogo_service.dart';
 import 'package:fausto/utils/cores.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 class Alfabeto extends StatefulWidget {
   const Alfabeto({super.key});
@@ -14,15 +13,23 @@ class Alfabeto extends StatefulWidget {
 }
 
 class _AlfabetoState extends State<Alfabeto> {
-  final player = AudioPlayer();
   late List<AlfabetoModel> alfabetoList = [];
   int? elementoSelecionado;
+  final FlutterTts flutterTts = FlutterTts();
+
+  leitor(String text) async {
+    await flutterTts.setLanguage("pt-PT");
+    await flutterTts.setPitch(1); // 0.5 A 1.5
+    await flutterTts.speak(text);
+  }
 
   @override
   void initState() {
     super.initState();
     loadAllData();
   }
+
+
 
   Future<void> loadAllData() async {
     try {
@@ -79,7 +86,7 @@ class _AlfabetoState extends State<Alfabeto> {
               for (AlfabetoModel alfabeto in alfabetoList)
                 InkWell(
                   onTap: () {
-                    player.play(AssetSource(alfabeto.audio));
+                    leitor(alfabeto.nome);
                     changeColor(alfabeto.id);
                   },
                   child: Container(
@@ -101,10 +108,9 @@ class _AlfabetoState extends State<Alfabeto> {
       ),
     );
   }
-
-  @override
+    @override
   void dispose() {
-    player.dispose();
     super.dispose();
+    flutterTts.stop();
   }
 }
