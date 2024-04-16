@@ -1,4 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:fausto/bloc/flutter_tts/flutter_tts_bloc.dart';
+import 'package:fausto/dependencies/get_it.dart';
 import 'package:fausto/model/jogo_model.dart';
 import 'package:fausto/services/jogo_service.dart';
 import 'package:fausto/utils/cores.dart';
@@ -56,7 +58,6 @@ class _CoresState extends State<Cores> {
 
   @override
   Widget build(BuildContext context) {
-    final player = AudioPlayer();
     return SafeArea(
         child: Scaffold(
             appBar: AppBar(
@@ -78,7 +79,8 @@ class _CoresState extends State<Cores> {
                   for (CoreModel cor in corList)
                     InkWell(
                         onTap: () {
-                          player.play(AssetSource(cor.audio));
+                          // player.play(AssetSource(cor.audio));
+                          getIt<FlutterTtsBloc>().add(FlutterTtsEventSpeak(cor.nome));
                           changeTamanho(cor.id);
                         },
                         child: Container(

@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   late List<JogoModel> jogoList = [];
 
-   @override
+  @override
   void initState() {
     super.initState();
     loadAllData();
@@ -58,21 +58,17 @@ class _HomeState extends State<Home> {
               childAspectRatio: 1,
               children: <Widget>[
                 for (JogoModel jogo in jogoList)
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>  jogo.jogo));
-                  },
-                  child: Container(
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => jogo.jogo));
+                    },
+                    child: Container(
                       width: double.maxFinite / 2 - 100,
                       height: 150,
                       decoration: BoxDecoration(
                         color: corPrincipal,
-                        border: Border.all(
-                            width: 5,
-                            color: corSegundaria),
+                        border: Border.all(width: 5, color: corSegundaria),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Column(
@@ -82,14 +78,15 @@ class _HomeState extends State<Home> {
                             height: 120,
                             child: Image.asset(jogo.imagem),
                           ),
-                           Text(
+                          Text(
                             jogo.nome,
                             style: const TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
                         ],
-                      )),
-                ),
+                      ),
+                    ),
+                  ),
               ],
             ),
           )),

@@ -1,4 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:fausto/bloc/flutter_tts/flutter_tts_bloc.dart';
+import 'package:fausto/dependencies/get_it.dart';
 import 'package:fausto/model/jogo_model.dart';
 import 'package:fausto/services/jogo_service.dart';
 import 'package:fausto/utils/cores.dart';
@@ -77,7 +79,8 @@ class _NumerosState extends State<Numeros> {
                   for (NumeroModel numero in numeroList)
                     InkWell(
                         onTap: () {
-                          player.play(AssetSource(numero.audio));
+                          // player.play(AssetSource(numero.audio));
+                          getIt<FlutterTtsBloc>().add(FlutterTtsEventSpeak(numero.numero));
                           changeColor(numero.id);
                         },
                         child: Container(
