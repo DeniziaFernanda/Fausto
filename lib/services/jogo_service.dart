@@ -11,65 +11,55 @@ import 'package:fausto/view/numeros.dart';
 import 'package:flutter/material.dart';
 
 class JogoService {
-
-  static Future<List<JogoModel>> getAllJogos() async{
+  static Future<List<JogoModel>> getAllJogos() async {
     List<JogoModel> jogos = [];
 
     jogos.addAll([
-       const JogoModel(
-        id: 1, 
-        imagem: 'assets/Imagens/alfabeto/bloco-abc.png', 
-        nome: "Alfabeto", 
-        jogo: Alfabeto()
-        ),
-        const JogoModel(
-        id: 2, 
-        imagem: 'assets/Imagens/numeros/numeros.png', 
-        nome: "Números", 
-        jogo: Numeros()
-        ),
-        const JogoModel(
-        id: 3, 
-        imagem: 'assets/Imagens/frutas/frutas.png', 
-        nome: "Frutas", 
-        jogo: Frutas()
-        ),
-        const JogoModel(
-        id: 4, 
-        imagem: 'assets/Imagens/animais/animais.png', 
-        nome: "Animais", 
-        jogo: Animais()
-        ),
-        const JogoModel(
-        id: 5, 
-        imagem: 'assets/Imagens/dias_da_semana/menina.png', 
-        nome: "Dias da Semana", 
-        jogo: DiasDaSemana()
-        ),
-        const JogoModel(
-        id: 6, 
-        imagem: 'assets/Imagens/cores/roda-de-cores.png', 
-        nome: "Cores", 
-        jogo: Cores()
-        ),
-        const JogoModel(
-        id: 7, 
-        imagem: 'assets/Imagens/desenho/paleta-de-cores.png', 
-        nome: "Desenho", 
-        jogo: Desenho()
-        ),
-        const JogoModel(
-        id: 8, 
-        imagem: 'assets/Imagens/jogo_quiz/pergunta.png', 
-        nome: "Jogo Quiz", 
-        jogo: JogoQuiz()
-        ),
-        const JogoModel(
-        id: 9, 
-        imagem: 'assets/Imagens/leitura/leitura.png', 
-        nome: "Leitura", 
-        jogo: Leitura()
-        ),
+      const JogoModel(
+          id: 1,
+          imagem: 'assets/Imagens/alfabeto/bloco-abc.png',
+          nome: "Alfabeto",
+          jogo: Alfabeto()),
+      const JogoModel(
+          id: 2,
+          imagem: 'assets/Imagens/numeros/numeros.png',
+          nome: "Números",
+          jogo: Numeros()),
+      const JogoModel(
+          id: 3,
+          imagem: 'assets/Imagens/frutas/frutas.png',
+          nome: "Frutas",
+          jogo: Frutas()),
+      const JogoModel(
+          id: 4,
+          imagem: 'assets/Imagens/animais/animais.png',
+          nome: "Animais",
+          jogo: Animais()),
+      const JogoModel(
+          id: 5,
+          imagem: 'assets/Imagens/dias_da_semana/menina.png',
+          nome: "Dias da Semana",
+          jogo: DiasDaSemana()),
+      const JogoModel(
+          id: 6,
+          imagem: 'assets/Imagens/cores/roda-de-cores.png',
+          nome: "Cores",
+          jogo: Cores()),
+      const JogoModel(
+          id: 7,
+          imagem: 'assets/Imagens/desenho/paleta-de-cores.png',
+          nome: "Desenho",
+          jogo: Desenho()),
+      const JogoModel(
+          id: 8,
+          imagem: 'assets/Imagens/jogo_quiz/pergunta.png',
+          nome: "Jogo Quiz",
+          jogo: JogoQuiz()),
+      const JogoModel(
+          id: 9,
+          imagem: 'assets/Imagens/leitura/leitura.png',
+          nome: "Leitura",
+          jogo: Leitura()),
     ]);
 
     return jogos;
@@ -81,108 +71,134 @@ class JogoService {
     alfabeto.addAll([
       const AlfabetoModel(
           id: 1,
+          letra: 'a',
           imagem: 'assets/Imagens/alfabeto/a.png',
-          audio: 'audios/alfabeto/a.mp3'),
+          audio: 'assets/audios/alfabeto/a.mp3'),
       const AlfabetoModel(
           id: 2,
+          letra: 'b',
           imagem: 'assets/Imagens/alfabeto/b.png',
-          audio: 'audios/alfabeto/b.mp3'),
+          audio: 'assets/audios/alfabeto/b.mp3'),
       const AlfabetoModel(
           id: 3,
+          letra: 'c',
           imagem: 'assets/Imagens/alfabeto/c.png',
-          audio: 'audios/alfabeto/c.mp3'),
+          audio: 'assets/audios/alfabeto/c.mp3'),
       const AlfabetoModel(
           id: 4,
+          letra: 'd',
           imagem: 'assets/Imagens/alfabeto/d.png',
-          audio: 'audios/alfabeto/d.mp3'),
+          audio: 'assets/audios/alfabeto/d.mp3'),
       const AlfabetoModel(
           id: 5,
+          letra: 'e',
           imagem: 'assets/Imagens/alfabeto/e.png',
-          audio: 'audios/alfabeto/e.mp3'),
+          audio: 'assets/audios/alfabeto/e.mp3'),
       const AlfabetoModel(
           id: 6,
+          letra: 'f',
           imagem: 'assets/Imagens/alfabeto/f.png',
-          audio: 'audios/alfabeto/f.mp3'),
+          audio: 'assets/audios/alfabeto/f.mp3'),
       const AlfabetoModel(
           id: 7,
+          letra: 'g',
           imagem: 'assets/Imagens/alfabeto/g.png',
-          audio: 'audios/alfabeto/g.mp3'),
+          audio: 'assets/audios/alfabeto/g.mp3'),
       const AlfabetoModel(
           id: 8,
+          letra: 'h',
           imagem: 'assets/Imagens/alfabeto/h.png',
-          audio: 'audios/alfabeto/h.mp3'),
+          audio: 'assets/audios/alfabeto/h.mp3'),
       const AlfabetoModel(
           id: 9,
+          letra: 'i',
           imagem: 'assets/Imagens/alfabeto/i.png',
-          audio: 'audios/alfabeto/i.mp3'),
+          audio: 'assets/audios/alfabeto/i.mp3'),
       const AlfabetoModel(
           id: 10,
+          letra: 'j',
           imagem: 'assets/Imagens/alfabeto/j.png',
-          audio: 'audios/alfabeto/j.mp3'),
+          audio: 'assets/audios/alfabeto/j.mp3'),
       const AlfabetoModel(
           id: 11,
+          letra: 'k',
           imagem: 'assets/Imagens/alfabeto/k.png',
-          audio: 'audios/alfabeto/k.mp3'),
+          audio: 'assets/audios/alfabeto/k.mp3'),
       const AlfabetoModel(
           id: 12,
+          letra: 'l',
           imagem: 'assets/Imagens/alfabeto/l.png',
-          audio: 'audios/alfabeto/l.mp3'),
+          audio: 'assets/audios/alfabeto/l.mp3'),
       const AlfabetoModel(
           id: 13,
+          letra: 'm',
           imagem: 'assets/Imagens/alfabeto/m.png',
-          audio: 'audios/alfabeto/m.mp3'),
+          audio: 'assets/audios/alfabeto/m.mp3'),
       const AlfabetoModel(
           id: 14,
+          letra: 'n',
           imagem: 'assets/Imagens/alfabeto/n.png',
-          audio: 'audios/alfabeto/n.mp3'),
+          audio: 'assets/audios/alfabeto/n.mp3'),
       const AlfabetoModel(
           id: 15,
+          letra: 'o',
           imagem: 'assets/Imagens/alfabeto/o.png',
-          audio: 'audios/alfabeto/o.mp3'),
+          audio: 'assets/audios/alfabeto/o.mp3'),
       const AlfabetoModel(
           id: 16,
+          letra: 'p',
           imagem: 'assets/Imagens/alfabeto/p.png',
-          audio: 'audios/alfabeto/p.mp3'),
+          audio: 'assets/audios/alfabeto/p.mp3'),
       const AlfabetoModel(
           id: 17,
+          letra: 'q',
           imagem: 'assets/Imagens/alfabeto/q.png',
-          audio: 'audios/alfabeto/q.mp3'),
+          audio: 'assets/audios/alfabeto/q.mp3'),
       const AlfabetoModel(
           id: 18,
+          letra: 'r',
           imagem: 'assets/Imagens/alfabeto/r.png',
-          audio: 'audios/alfabeto/r.mp3'),
+          audio: 'assets/audios/alfabeto/r.mp3'),
       const AlfabetoModel(
           id: 19,
+          letra: 's',
           imagem: 'assets/Imagens/alfabeto/s.png',
-          audio: 'audios/alfabeto/s.mp3'),
+          audio: 'assets/audios/alfabeto/s.mp3'),
       const AlfabetoModel(
           id: 20,
+          letra: 't',
           imagem: 'assets/Imagens/alfabeto/t.png',
-          audio: 'audios/alfabeto/t.mp3'),
+          audio: 'assets/audios/alfabeto/t.mp3'),
       const AlfabetoModel(
           id: 21,
+          letra: 'u',
           imagem: 'assets/Imagens/alfabeto/u.png',
-          audio: 'audios/alfabeto/u.mp3'),
+          audio: 'assets/audios/alfabeto/u.mp3'),
       const AlfabetoModel(
           id: 22,
+          letra: 'v',
           imagem: 'assets/Imagens/alfabeto/v.png',
-          audio: 'audios/alfabeto/v.mp3'),
+          audio: 'assets/audios/alfabeto/v.mp3'),
       const AlfabetoModel(
           id: 23,
+          letra: 'w',
           imagem: 'assets/Imagens/alfabeto/w.png',
-          audio: 'audios/alfabeto/w.mp3'),
+          audio: 'assets/audios/alfabeto/w.mp3'),
       const AlfabetoModel(
           id: 24,
+          letra: 'x',
           imagem: 'assets/Imagens/alfabeto/x.png',
-          audio: 'audios/alfabeto/x.mp3'),
+          audio: 'assets/audios/alfabeto/x.mp3'),
       const AlfabetoModel(
           id: 25,
+          letra: 'y',
           imagem: 'assets/Imagens/alfabeto/y.png',
-          audio: 'audios/alfabeto/y.mp3'),
+          audio: 'assets/audios/alfabeto/y.mp3'),
       const AlfabetoModel(
           id: 26,
+          letra: 'z',
           imagem: 'assets/Imagens/alfabeto/z.png',
-          audio: 'audios/alfabeto/z.mp3'),
+          audio: 'assets/audios/alfabeto/z.mp3'),
     ]);
     return alfabeto;
   }
@@ -487,47 +503,57 @@ class JogoService {
     numeros.addAll([
       const NumeroModel(
           id: 1,
+          numero: '1',
           imagem: 'assets/Imagens/numeros/1.png',
           audio: 'audios/numeros/1.mp3'),
       const NumeroModel(
           id: 2,
+          numero: '2',
           imagem: 'assets/Imagens/numeros/2.png',
           audio: 'audios/numeros/2.mp3'),
       const NumeroModel(
           id: 3,
+          numero: '3',
           imagem: 'assets/Imagens/numeros/3.png',
           audio: 'audios/numeros/3.mp3'),
       const NumeroModel(
           id: 4,
+          numero: '4',
           imagem: 'assets/Imagens/numeros/4.png',
           audio: 'audios/numeros/4.mp3'),
       const NumeroModel(
           id: 5,
+          numero: '5',
           imagem: 'assets/Imagens/numeros/5.png',
           audio: 'audios/numeros/5.mp3'),
       const NumeroModel(
           id: 6,
+          numero: '6',
           imagem: 'assets/Imagens/numeros/6.png',
           audio: 'audios/numeros/6.mp3'),
       const NumeroModel(
           id: 7,
+          numero: '7',
           imagem: 'assets/Imagens/numeros/7.png',
           audio: 'audios/numeros/7.mp3'),
       const NumeroModel(
           id: 8,
+          numero: '8',
           imagem: 'assets/Imagens/numeros/8.png',
           audio: 'audios/numeros/8.mp3'),
       const NumeroModel(
           id: 9,
+          numero: '9',
           imagem: 'assets/Imagens/numeros/9.png',
           audio: 'audios/numeros/9.mp3'),
       const NumeroModel(
           id: 10,
+          numero: '10',
           imagem: 'assets/Imagens/numeros/10.png',
           audio: 'audios/numeros/10.mp3')
     ]);
     return numeros;
-    }
+  }
 
   static Future<List<FrutaModel>> getAllFrutas() async {
     List<FrutaModel> frutas = [];
@@ -611,9 +637,7 @@ class JogoService {
         audio: 'audios/frutas/uva.mp3',
         nome: 'Uva',
       ),
-     
     ]);
     return frutas;
   }
-
 }

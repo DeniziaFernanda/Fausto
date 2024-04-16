@@ -17,10 +17,12 @@ class JogoModel {
 class AlfabetoModel {
   final int id;
   final String imagem;
+  final String letra;
   final String audio;
 
   const AlfabetoModel({
     required this.id,
+    required this.letra,
     required this.imagem,
     required this.audio,
   });
@@ -70,11 +72,13 @@ class SemanaModel {
 
 class NumeroModel {
   final int id;
+  final String numero;
   final String imagem;
   final String audio;
 
   const NumeroModel({
     required this.id,
+    required this.numero,
     required this.imagem,
     required this.audio,
   });
