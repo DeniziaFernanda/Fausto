@@ -40,6 +40,9 @@ class HomePage extends ConsumerWidget {
                         case "animal":
                           context.push(RouteNames.animal);
                           break;
+                        case "fruit":
+                          context.push(RouteNames.fruits);
+                          break;
                         // Adicione mais casos aqui para outros jogos
                         default:
                           // Ação padrão ou mensagem de erro
