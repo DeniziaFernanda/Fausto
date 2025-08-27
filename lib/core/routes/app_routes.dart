@@ -1,4 +1,5 @@
 import 'package:fausto/features/alphabet/presentation/page/alphabet_page.dart';
+import 'package:fausto/features/animal/presentation/page/animal_page.dart';
 import 'package:fausto/features/home/presentation/page/home_page.dart';
 import 'package:fausto/features/splash/presentation/pages/splash_page.dart';
 import 'package:go_router/go_router.dart';
@@ -25,6 +26,12 @@ class RouteManager {
         path: RouteNames.alphabet,
         name: 'alphabet',
         builder: (context, state) => const AlphabetPage()
+      ),
+
+      GoRoute(
+        path: RouteNames.animal,
+        name: 'animal',
+        builder: (context, state) => const AnimalPage()
       ),
     ]
 );

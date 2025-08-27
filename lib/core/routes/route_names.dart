@@ -4,4 +4,5 @@ class RouteNames {
 
 
   static const String alphabet = '/alphabet';
+  static const String animal = '/animal';
 }
