@@ -4,6 +4,7 @@ import 'package:fausto/features/color/presentation/page/color_page.dart';
 import 'package:fausto/features/fruit/presentation/page/fruit_page.dart';
 import 'package:fausto/features/home/presentation/page/home_page.dart';
 import 'package:fausto/features/number/presentation/page/number_page.dart';
+import 'package:fausto/features/read/presentation/page/read_page.dart';
 import 'package:fausto/features/splash/presentation/pages/splash_page.dart';
 import 'package:fausto/features/week/presentation/page/week_page.dart';
 import 'package:go_router/go_router.dart';
@@ -56,6 +57,11 @@ class RouteManager {
         path: RouteNames.colors,
         name: 'color',
         builder: (context, state) => const ColorPage(),
+      ),
+      GoRoute(
+        path: RouteNames.read,
+        name: 'read',
+        builder: (context, state) => const ReadPage(),
       ),
     ],
   );

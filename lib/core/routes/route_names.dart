@@ -9,4 +9,5 @@ class RouteNames {
   static const String number = '/numbers';
   static const String fruits = '/fruit';
   static const String week = '/week';
+  static const String read = '/read';
 }
