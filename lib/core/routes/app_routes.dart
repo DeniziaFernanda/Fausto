@@ -1,3 +1,4 @@
+import 'package:fausto/features/home/presentation/page/home_page.dart';
 import 'package:fausto/features/splash/presentation/pages/splash_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fausto/core/routes/route_names.dart';
@@ -14,6 +15,11 @@ class RouteManager {
         name: 'splash',
         builder: (context, state) => const SplashScreen(),
       ),
+      GoRoute(
+        path: RouteNames.home, 
+        name: 'home', 
+        builder: (context, state) => const HomePage()
+      )
     ]
 );
 }

@@ -8,47 +8,46 @@ class AppColors {
   // === PRIMARY ===
   static const Map<String, Map<int, Color>> primary = {
     'light': {
-      100: Color(0xFF66BB6A),
-      80: Color(0xFF81C784),
-      60: Color(0xFFA5D6A7),
-      40: Color(0xFFC8E6C9),
-      20: Color(0xFFE8F5E9),
-      10: Color(0xFFF1FAF1),
-      5: Color(0xFFF9FCF9),
+      100: Color(0xFFD9E76C),
+      80: Color(0xFFDEE982),
+      60: Color(0xFFE4EEA1),
+      40: Color(0xFFEAF3C0),
+      20: Color(0xFFF2F7DB),
+      10: Color(0xFFF8FBEA),
+      5: Color(0xFFFCFEF5),
     },
     'dark': {
-      100: Color(0xFF66BB6A),
-      80: Color(0xFF57A05B),
-      60: Color(0xFF4C8C4F),
-      40: Color(0xFF3E6D40),
-      20: Color(0xFF2E4C30),
-      10: Color(0xFF1E3320),
-      5: Color(0xFF111C12),
+      100: Color(0xFFD9E76C),
+      80: Color(0xFFB8C85B),
+      60: Color(0xFF9BA94B),
+      40: Color(0xFF7A853A),
+      20: Color(0xFF576029),
+      10: Color(0xFF3A401B),
+      5: Color(0xFF1E2110),
     },
   };
 
   // === SECONDARY ===
   static const Map<String, Map<int, Color>> secondary = {
     'light': {
-      100: Color(0xFF00FFAE),
-      80: Color(0xFF33FFBE), 
-      60: Color(0xFF85FFD8),
-      40: Color(0xFFADFFE5),
-      20: Color(0xFFD6FFF2),
-      10: Color(0xFFEBFFF8),
-      5: Color(0xFFF5FFFC),
+      100: Color(0xFF9CC753),
+      80: Color(0xFFAED479),
+      60: Color(0xFFC1E0A0),
+      40: Color(0xFFD5EBBF),
+      20: Color(0xFFE9F4DB),
+      10: Color(0xFFF3F9EC),
+      5: Color(0xFFFAFCF7),
     },
     'dark': {
-      100: Color(0xFF00FFAE),
-      80: Color(0xFF00ECE5),
-      60: Color(0xFF5AFFF7),
-      40: Color(0xFF8AFFFA),
-      20: Color(0xFFBAFFFC),
-      10: Color(0xFFDDFFFD),
-      5: Color(0xFFEEFFFE),
+      100: Color(0xFF9CC753),
+      80: Color(0xFF86AB47),
+      60: Color(0xFF708E3B),
+      40: Color(0xFF58702F),
+      20: Color(0xFF405223),
+      10: Color(0xFF2A3517),
+      5: Color(0xFF161B0C),
     },
   };
-
 
   // === TEXT ===
   static const Map<String, Map<int, Color>> text = {
@@ -98,9 +97,9 @@ class AppColors {
   static const Map<String, Map<int, Color>> success = {
     'light': {
       100: Color(0xFF2AC769),
-      80: Color(0xFF55D287), 
-      60: Color(0xFF7FDDA5), 
-      40: Color(0xFFAAE9C3), 
+      80: Color(0xFF55D287),
+      60: Color(0xFF7FDDA5),
+      40: Color(0xFFAAE9C3),
       20: Color(0xFFD4F4E1),
       10: Color(0xFFEAFAF0),
       5: Color(0xFFF4FCF7),
@@ -128,7 +127,7 @@ class AppColors {
       5: Color(0xFFFFF6F6),
     },
     'dark': {
-       100: Color(0xFFFB4E4E),
+      100: Color(0xFFFB4E4E),
       80: Color(0xFFF44336),
       60: Color(0xFFE57373),
       40: Color(0xFFEF9A9A),
@@ -140,37 +139,19 @@ class AppColors {
 
   // === SURFACE ===
   static const Map<String, Map<int, Color>> surface = {
-    'light': {
-      100: Color(0xFFFFFFFF),
-      80: Color(0xFFF5F5F5),
-    },
-    'dark': {
-      100: Color(0xFF121212),
-      80: Color(0xFF1E1E1E),
-    },
+    'light': {100: Color(0xFFFFFFFF), 80: Color(0xFFF5F5F5)},
+    'dark': {100: Color(0xFF121212), 80: Color(0xFF1E1E1E)},
   };
 
   // === BACKGROUND ===
   static const Map<String, Map<int, Color>> background = {
-    'light': {
-      100: Color(0xFFFAFAFA),
-      80: Color(0xFFF0F0F0),
-    },
-    'dark': {
-      100: Color(0xFF000000),
-      80: Color(0xFF0A0A0A),
-    },
+    'light': {100: Color(0xFFFAFAFA), 80: Color(0xFFF0F0F0)},
+    'dark': {100: Color(0xFF000000), 80: Color(0xFF0A0A0A)},
   };
 
   // === Button text ===
   static const Map<String, Map<int, Color>> buttonText = {
-    'light': {
-      100: Color(0xFFFFFFFF),
-      80: Color(0xFFF5F5F5),
-    },
-    'dark': {
-      100: Color(0xFFFFFFFF),
-      80: Color(0xFFF5F5F5),
-    },
+    'light': {100: Color(0xFFFFFFFF), 80: Color(0xFFF5F5F5)},
+    'dark': {100: Color(0xFFFFFFFF), 80: Color(0xFFF5F5F5)},
   };
 }

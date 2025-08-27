@@ -1,54 +1,22 @@
-import 'package:fausto/model/jogo_model.dart';
-import 'package:fausto/services/jogo_service.dart';
-import 'package:fausto/utils/cores.dart';
+import 'package:fausto/shared/styles/theme_color.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fausto/features/games/presentation/provider/game_provider.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class HomePage extends ConsumerWidget {
+  const HomePage({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  late List<JogoModel> jogoList = [];
-
-  @override
-  void initState() {
-    super.initState();
-    loadAllData();
-  }
-
-  Future<void> loadAllData() async {
-    try {
-      // Carregar lista de alfabeto
-      List<JogoModel> loadedJogo = await JogoService.getAllJogos();
-      setState(() {
-        jogoList = loadedJogo;
-      });
-    } catch (e) {
-      // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Erro ao carregar Jogos"),
-          backgroundColor: Colors.black,
-        ),
-      );
-      setState(() {
-        jogoList = [];
-      });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final colors = ThemeColors(context);
+    final gamesAsync = ref.watch(gamesProvider);
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Colors.white,
-          body: Padding(
-            padding: const EdgeInsets.only(bottom: 20),
-            child: GridView.count(
+        backgroundColor: colors.background(),
+        body: Padding(
+          padding: const EdgeInsets.only(bottom: 20),
+          child: gamesAsync.when(
+            data: (jogoList) => GridView.count(
               primary: false,
               padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
               crossAxisSpacing: 10,
@@ -57,18 +25,17 @@ class _HomeState extends State<Home> {
               scrollDirection: Axis.vertical,
               childAspectRatio: 1,
               children: <Widget>[
-                for (JogoModel jogo in jogoList)
+                for (final jogo in jogoList)
                   InkWell(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => jogo.jogo));
+                      // TODO: Navegação para a tela do jogo
                     },
                     child: Container(
                       width: double.maxFinite / 2 - 100,
                       height: 150,
                       decoration: BoxDecoration(
-                        color: corPrincipal,
-                        border: Border.all(width: 5, color: corSegundaria),
+                        color: colors.primary(),
+                        border: Border.all(width: 5, color: colors.secondary()),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Column(
@@ -76,10 +43,10 @@ class _HomeState extends State<Home> {
                         children: [
                           SizedBox(
                             height: 120,
-                            child: Image.asset(jogo.imagem),
+                            child: Image.asset(jogo.image),
                           ),
                           Text(
-                            jogo.nome,
+                            jogo.name,
                             style: const TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
@@ -89,7 +56,11 @@ class _HomeState extends State<Home> {
                   ),
               ],
             ),
-          )),
+            loading: () => const Center(child: CircularProgressIndicator()),
+            error: (e, st) => Center(child: Text('Erro ao carregar jogos')), 
+          ),
+        ),
+      ),
     );
   }
 }
