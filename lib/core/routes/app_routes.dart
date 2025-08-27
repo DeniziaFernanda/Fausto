@@ -1,6 +1,7 @@
 import 'package:fausto/features/alphabet/presentation/page/alphabet_page.dart';
 import 'package:fausto/features/animal/presentation/page/animal_page.dart';
 import 'package:fausto/features/color/presentation/page/color_page.dart';
+import 'package:fausto/features/drawing/presentation/page/drawing_page.dart';
 import 'package:fausto/features/fruit/presentation/page/fruit_page.dart';
 import 'package:fausto/features/home/presentation/page/home_page.dart';
 import 'package:fausto/features/number/presentation/page/number_page.dart';
@@ -63,6 +64,11 @@ class RouteManager {
         name: 'read',
         builder: (context, state) => const ReadPage(),
       ),
+      GoRoute(
+        path: RouteNames.drawing,
+        name: 'drawing',
+        builder: (context, state) => const DrawingPage(),
+      )
     ],
   );
 }
