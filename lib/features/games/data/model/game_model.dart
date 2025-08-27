@@ -6,6 +6,7 @@ class GameModel extends GameEntity {
     required super.id,
     required super.image,
     required super.name,
+    required super.type,
   });
 
   factory GameModel.fromEntity(GameEntity entity) {
@@ -13,6 +14,7 @@ class GameModel extends GameEntity {
       id: entity.id,
       image: entity.image,
       name: entity.name,
+      type: entity.type,
     );
   }
 
@@ -21,6 +23,7 @@ class GameModel extends GameEntity {
       id: id,
       image: image,
       name: name,
+      type: type,
     );
   }
 }

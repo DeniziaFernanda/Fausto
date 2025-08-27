@@ -1,7 +1,9 @@
+import 'package:fausto/core/routes/route_names.dart';
 import 'package:fausto/shared/styles/theme_color.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fausto/features/games/presentation/provider/game_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -28,7 +30,15 @@ class HomePage extends ConsumerWidget {
                 for (final jogo in jogoList)
                   InkWell(
                     onTap: () {
-                      // TODO: Navegação para a tela do jogo
+                     switch (jogo.type.name) {
+                        case "alphabet":
+                          context.push(RouteNames.alphabet);
+                          break;
+                        // Adicione mais casos aqui para outros jogos
+                        default:
+                          // Ação padrão ou mensagem de erro
+                          break;
+                      }
                     },
                     child: Container(
                       width: double.maxFinite / 2 - 100,

@@ -1,3 +1,4 @@
+import 'package:fausto/features/alphabet/presentation/page/alphabet_page.dart';
 import 'package:fausto/features/home/presentation/page/home_page.dart';
 import 'package:fausto/features/splash/presentation/pages/splash_page.dart';
 import 'package:go_router/go_router.dart';
@@ -19,7 +20,12 @@ class RouteManager {
         path: RouteNames.home, 
         name: 'home', 
         builder: (context, state) => const HomePage()
-      )
+      ),
+      GoRoute(
+        path: RouteNames.alphabet,
+        name: 'alphabet',
+        builder: (context, state) => const AlphabetPage()
+      ),
     ]
 );
 }
