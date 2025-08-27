@@ -1,5 +1,6 @@
 import 'package:fausto/features/alphabet/presentation/page/alphabet_page.dart';
 import 'package:fausto/features/animal/presentation/page/animal_page.dart';
+import 'package:fausto/features/color/presentation/page/color_page.dart';
 import 'package:fausto/features/fruit/presentation/page/fruit_page.dart';
 import 'package:fausto/features/home/presentation/page/home_page.dart';
 import 'package:fausto/features/number/presentation/page/number_page.dart';
@@ -31,13 +32,11 @@ class RouteManager {
         name: 'alphabet',
         builder: (context, state) => const AlphabetPage(),
       ),
-
       GoRoute(
         path: RouteNames.animal,
         name: 'animal',
         builder: (context, state) => const AnimalPage(),
       ),
-
       GoRoute(
         path: RouteNames.number,
         name: 'number',
@@ -52,6 +51,11 @@ class RouteManager {
         path: RouteNames.week,
         name: 'week',
         builder: (context, state) => const WeekPage(),
+      ),
+      GoRoute(
+        path: RouteNames.colors,
+        name: 'color',
+        builder: (context, state) => const ColorPage(),
       ),
     ],
   );

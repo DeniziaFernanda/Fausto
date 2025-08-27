@@ -46,6 +46,9 @@ class HomePage extends ConsumerWidget {
                         case "week":
                           context.push(RouteNames.week);
                           break;
+                        case "color":
+                          context.push(RouteNames.colors);
+                          break;
                         // Adicione mais casos aqui para outros jogos
                         default:
                           // Ação padrão ou mensagem de erro
