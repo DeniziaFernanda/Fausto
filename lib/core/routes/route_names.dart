@@ -8,4 +8,5 @@ class RouteNames {
   static const String colors = '/colors';
   static const String number = '/numbers';
   static const String fruits = '/fruits';
+  static const String week = '/week';
 }
