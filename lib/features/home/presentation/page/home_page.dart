@@ -34,6 +34,9 @@ class HomePage extends ConsumerWidget {
                         case "alphabet":
                           context.push(RouteNames.alphabet);
                           break;
+                        case "number":
+                          context.push(RouteNames.number);
+                          break;
                         case "animal":
                           context.push(RouteNames.animal);
                           break;
